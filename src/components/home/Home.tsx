@@ -140,6 +140,19 @@ export default function Home() {
                 alt="Image après la vidéo"
               />
             )}
+
+            {/* {longuevueStage === "video" ? (
+                <iframe
+                  className="modal__media"
+                  src="https://drive.google.com/file/d/141ahftckJoaJFcpL9rfsKkk29h411Hfu/preview"
+                  allow="autoplay"
+                  allowFullScreen
+                  title="Vidéo Longuevue"
+                />
+              ) : (
+                <img className="modal__media" src="/assets/BG.png" alt="Image après la vidéo" />
+              )}
+ */}
           </div>
         </div>
       )}
