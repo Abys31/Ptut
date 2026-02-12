@@ -9,8 +9,7 @@ export default function PlusInfos() {
         <Link className="pi-hero__back" to="/" aria-label="Retour à la page interactive">
           ← Retour à la page interactive
         </Link>
-        <img src="/assets/title.PNG" className="pi-hero__title-img" alt="CapitNF1" />
-        <img src="/assets/iceberg_layer.PNG" className="pi-hero__iceberg" alt="" />
+        <img src="/assets/ice_b.png" className="pi-hero__banner" alt="CapitNF1 — Plus d'Info" />
       </header>
 
       {/* ========================= LE PROJET ========================= */}
@@ -69,27 +68,49 @@ export default function PlusInfos() {
           <div className="pi-profile">
             <div className="pi-profile__photo" aria-hidden="true" />
             <div className="pi-profile__info">
-              <h3>Baptiste</h3>
-              <p>Texte de présentation à venir.</p>
+              <h3>Maëlle Biotteau</h3>
+              <p>
+                Co-commanditaire du projet CAPITNF1 — chercheuse au sein du laboratoire ToNIC (Toulouse NeuroImaging Center)
+                de l'INSERM, spécialisée dans la prise en charge de l'enfant atteint de Neurofibromatose de type 1.
+              </p>
             </div>
           </div>
 
           <div className="pi-profile">
             <div className="pi-profile__photo" aria-hidden="true" />
             <div className="pi-profile__info">
-              <h3>Maxime</h3>
-              <p>Texte de présentation à venir.</p>
+              <h3>Baptiste Vignaud</h3>
+              <p>
+                Co-commanditaire du projet CAPITNF1 — développeur web freelance.
+                Texte de présentation complet à venir.
+              </p>
+            </div>
+          </div>
+
+          <div className="pi-profile">
+            <div className="pi-profile__photo" aria-hidden="true" />
+            <div className="pi-profile__info">
+              <h3>Maxime Moser</h3>
+              <p>
+                Designer en charge de la charte graphique et des éléments visuels du projet CAPITNF1
+                (pictogrammes, illustrations, identité visuelle).
+              </p>
             </div>
           </div>
         </div>
 
         {/* École ISIS */}
         <div className="pi-card" style={{ marginTop: '24px' }}>
-          <h3>École ISIS</h3>
+          <h3>École ISIS — Ingénierie des Systèmes d'Information en Santé</h3>
           <p>
             Le développement technique de l'interface CapitNF1 a été réalisé dans le cadre d'un projet
-            tutoré par des étudiants de l'école ISIS (Ingénierie des Systèmes d'Information en Santé) à Castres.
+            tutoré par des étudiants de l'école ISIS à Castres (promotion 2027), sous la tutelle d'Arnaud Charron :
           </p>
+          <ul style={{ marginTop: '8px', paddingLeft: '20px' }}>
+            <li>Yasmine Belarbi — Communication et coordination</li>
+            <li>Ghenima Kadi — Cheffe de projet</li>
+            <li>Malek Gabsi — Développeur, implémentation technique</li>
+          </ul>
         </div>
       </section>
 
@@ -104,35 +125,39 @@ export default function PlusInfos() {
             <span className="pi-supporter__name">CHU de Toulouse</span>
           </a>
 
-          <a className="pi-supporter" href="https://www.fondation-groupama.com/" target="_blank" rel="noopener noreferrer">
+          <a className="pi-supporter" href="https://www.inserm.fr/" target="_blank" rel="noopener noreferrer">
             <div className="pi-supporter__logo">
-              {/* Placeholder — remplacer par le vrai logo */}
-              <span style={{ fontSize: '11px', textAlign: 'center', color: '#2e5f7e', fontWeight: 700 }}>Fondation Groupama</span>
+              <img src="/assets/inserm.png" alt="Inserm / ToNIC" />
             </div>
-            <span className="pi-supporter__name">Fondation Groupama "Vaincre les Maladies Rares"</span>
+            <span className="pi-supporter__name">Inserm / ToNIC — Toulouse NeuroImaging Center</span>
           </a>
 
-          <a className="pi-supporter" href="https://www.association-les-gladiateurs.org/" target="_blank" rel="noopener noreferrer">
+          <a className="pi-supporter" href="https://www.fondation-groupama.com/" target="_blank" rel="noopener noreferrer">
             <div className="pi-supporter__logo">
-              {/* Placeholder — remplacer par le vrai logo */}
-              <span style={{ fontSize: '11px', textAlign: 'center', color: '#2e5f7e', fontWeight: 700 }}>Les Gladiateurs</span>
+              <img src="/assets/Groupama.png" alt="Fondation Groupama" />
+            </div>
+            <span className="pi-supporter__name">Fondation Groupama &laquo;&nbsp;Vaincre les Maladies Rares&nbsp;&raquo;</span>
+          </a>
+
+          <a className="pi-supporter" href="https://lesgladiateurs.org/" target="_blank" rel="noopener noreferrer">
+            <div className="pi-supporter__logo">
+              <img src="/assets/Asso_lesgladiateurs.png" alt="Les Gladiateurs" />
             </div>
             <span className="pi-supporter__name">Association Les Gladiateurs</span>
           </a>
 
           <a className="pi-supporter" href="https://www.anrfrance.fr/" target="_blank" rel="noopener noreferrer">
             <div className="pi-supporter__logo">
-              {/* Placeholder — remplacer par le vrai logo */}
-              <span style={{ fontSize: '11px', textAlign: 'center', color: '#2e5f7e', fontWeight: 700 }}>ANR France</span>
+              <img src="/assets/Ose.png" alt="ANR France" />
             </div>
             <span className="pi-supporter__name">Association Neurofibromatoses et Recklinghausen</span>
           </a>
 
-          <a className="pi-supporter" href="/assets/inserm.png" target="_blank" rel="noopener noreferrer">
+          <a className="pi-supporter" href="https://isis.univ-jfc.fr/" target="_blank" rel="noopener noreferrer">
             <div className="pi-supporter__logo">
-              <img src="/assets/inserm.png" alt="Inserm" />
+              <img src="/assets/isis.png" alt="ISIS" />
             </div>
-            <span className="pi-supporter__name">Inserm</span>
+            <span className="pi-supporter__name">École ISIS — Castres</span>
           </a>
         </div>
       </section>
@@ -199,6 +224,16 @@ export default function PlusInfos() {
             <a className="pi-link-card" href="https://www.chusj.org/fr/soins-services/N/Neurofibromatose" target="_blank" rel="noopener noreferrer">
               <div className="pi-link-card__title">CHU Sainte-Justine — NF1</div>
               <p className="pi-link-card__desc">La clinique NF1 offre une expertise et des soins spécialisés avec une attention particulière au développement de l'enfant.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://enseignement.chusj.org/fr/bibliotheques/les-Ressources/Guide-Info-famille?NodeAlias=Neurofibromatose" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">Guide Info-famille — Neurofibromatose</div>
+              <p className="pi-link-card__desc">Guide du CHU Sainte-Justine destiné aux familles pour mieux comprendre la neurofibromatose et les ressources disponibles.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://www.gerneurofibromatosis.ch/documentation/" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">GER-NF — Documentation complète</div>
+              <p className="pi-link-card__desc">Documentation et brochures du Groupement d'Entraide Romand pour les personnes atteintes de Neurofibromatose.</p>
             </a>
           </div>
         </div>
@@ -271,7 +306,7 @@ export default function PlusInfos() {
             </div>
           </a>
 
-          <a className="pi-book-card" href="https://www.anrfrance.fr/collect/description/159610-c-librairie-ose" target="_blank" rel="noopener noreferrer">
+          <a className="pi-book-card" href="https://www.anrfrance.fr/page/2981765-librairie-ose" target="_blank" rel="noopener noreferrer">
             <div className="pi-book-card__cover" aria-hidden="true" />
             <div className="pi-book-card__info">
               <h3 className="pi-book-card__title">Gaspard</h3>
@@ -304,11 +339,11 @@ export default function PlusInfos() {
             </div>
           </a>
 
-          <a className="pi-book-card" href="https://www.youtube.com/results?search_query=la+petite+casserole+d+anatole" target="_blank" rel="noopener noreferrer">
+          <a className="pi-book-card" href="https://www.leslibraires.fr/livre/5694843-la-petite-casserole-d-anatole-isabelle-carrier-bilboquet" target="_blank" rel="noopener noreferrer">
             <div className="pi-book-card__cover" aria-hidden="true" />
             <div className="pi-book-card__info">
               <h3 className="pi-book-card__title">La Petite Casserole d'Anatole</h3>
-              <p className="pi-book-card__author">Éric Montchaud</p>
+              <p className="pi-book-card__author">Isabelle Carrier — Bilboquet</p>
               <p className="pi-book-card__desc">
                 L'histoire touchante d'Anatole qui traîne toujours derrière lui sa petite casserole — une métaphore poétique sur la différence.
               </p>
