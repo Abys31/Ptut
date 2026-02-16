@@ -9,8 +9,7 @@ export default function PlusInfos() {
         <Link className="pi-hero__back" to="/" aria-label="Retour à la page interactive">
           ← Retour à la page interactive
         </Link>
-        <img src="/assets/title.PNG" className="pi-hero__title-img" alt="CapitNF1" />
-        <img src="/assets/iceberg_layer.PNG" className="pi-hero__iceberg" alt="" />
+        <img src="/assets/ice_b.png" className="pi-hero__banner" alt="CapitNF1 — Plus d'Info" />
       </header>
 
       {/* ========================= LE PROJET ========================= */}
@@ -69,27 +68,49 @@ export default function PlusInfos() {
           <div className="pi-profile">
             <div className="pi-profile__photo" aria-hidden="true" />
             <div className="pi-profile__info">
-              <h3>Baptiste</h3>
-              <p>Texte de présentation à venir.</p>
+              <h3>Maëlle Biotteau</h3>
+              <p>
+                Co-commanditaire du projet CAPITNF1 — chercheuse au sein du laboratoire ToNIC (Toulouse NeuroImaging Center)
+                de l'INSERM, spécialisée dans la prise en charge de l'enfant atteint de Neurofibromatose de type 1.
+              </p>
             </div>
           </div>
 
           <div className="pi-profile">
             <div className="pi-profile__photo" aria-hidden="true" />
             <div className="pi-profile__info">
-              <h3>Maxime</h3>
-              <p>Texte de présentation à venir.</p>
+              <h3>Baptiste Vignaud</h3>
+              <p>
+                Co-commanditaire du projet CAPITNF1 — développeur web freelance.
+                Texte de présentation complet à venir.
+              </p>
+            </div>
+          </div>
+
+          <div className="pi-profile">
+            <div className="pi-profile__photo" aria-hidden="true" />
+            <div className="pi-profile__info">
+              <h3>Maxime Moser</h3>
+              <p>
+                Designer en charge de la charte graphique et des éléments visuels du projet CAPITNF1
+                (pictogrammes, illustrations, identité visuelle).
+              </p>
             </div>
           </div>
         </div>
 
         {/* École ISIS */}
         <div className="pi-card" style={{ marginTop: '24px' }}>
-          <h3>École ISIS</h3>
+          <h3>École ISIS — Ingénierie des Systèmes d'Information en Santé</h3>
           <p>
             Le développement technique de l'interface CapitNF1 a été réalisé dans le cadre d'un projet
-            tutoré par des étudiants de l'école ISIS (Ingénierie des Systèmes d'Information en Santé) à Castres.
+            tutoré par des étudiants de l'école ISIS à Castres (promotion 2027), sous la tutelle d'Arnaud Charron :
           </p>
+          <ul style={{ marginTop: '8px', paddingLeft: '20px' }}>
+            <li>Yasmine Belarbi — Communication et coordination</li>
+            <li>Ghenima Kadi — Cheffe de projet</li>
+            <li>Malek Gabsi — Développeur, implémentation technique</li>
+          </ul>
         </div>
       </section>
 
@@ -104,35 +125,39 @@ export default function PlusInfos() {
             <span className="pi-supporter__name">CHU de Toulouse</span>
           </a>
 
-          <a className="pi-supporter" href="https://www.fondation-groupama.com/" target="_blank" rel="noopener noreferrer">
+          <a className="pi-supporter" href="https://www.inserm.fr/" target="_blank" rel="noopener noreferrer">
             <div className="pi-supporter__logo">
-              {/* Placeholder — remplacer par le vrai logo */}
-              <span style={{ fontSize: '11px', textAlign: 'center', color: '#2e5f7e', fontWeight: 700 }}>Fondation Groupama</span>
+              <img src="/assets/inserm.png" alt="Inserm / ToNIC" />
             </div>
-            <span className="pi-supporter__name">Fondation Groupama "Vaincre les Maladies Rares"</span>
+            <span className="pi-supporter__name">Inserm / ToNIC — Toulouse NeuroImaging Center</span>
           </a>
 
-          <a className="pi-supporter" href="https://www.association-les-gladiateurs.org/" target="_blank" rel="noopener noreferrer">
+          <a className="pi-supporter" href="https://www.fondation-groupama.com/" target="_blank" rel="noopener noreferrer">
             <div className="pi-supporter__logo">
-              {/* Placeholder — remplacer par le vrai logo */}
-              <span style={{ fontSize: '11px', textAlign: 'center', color: '#2e5f7e', fontWeight: 700 }}>Les Gladiateurs</span>
+              <img src="/assets/Groupama.png" alt="Fondation Groupama" />
+            </div>
+            <span className="pi-supporter__name">Fondation Groupama &laquo;&nbsp;Vaincre les Maladies Rares&nbsp;&raquo;</span>
+          </a>
+
+          <a className="pi-supporter" href="https://lesgladiateurs.org/" target="_blank" rel="noopener noreferrer">
+            <div className="pi-supporter__logo">
+              <img src="/assets/Asso_lesgladiateurs.png" alt="Les Gladiateurs" />
             </div>
             <span className="pi-supporter__name">Association Les Gladiateurs</span>
           </a>
 
           <a className="pi-supporter" href="https://www.anrfrance.fr/" target="_blank" rel="noopener noreferrer">
             <div className="pi-supporter__logo">
-              {/* Placeholder — remplacer par le vrai logo */}
-              <span style={{ fontSize: '11px', textAlign: 'center', color: '#2e5f7e', fontWeight: 700 }}>ANR France</span>
+              <img src="/assets/Ose.png" alt="ANR France" />
             </div>
             <span className="pi-supporter__name">Association Neurofibromatoses et Recklinghausen</span>
           </a>
 
-          <a className="pi-supporter" href="/assets/inserm.png" target="_blank" rel="noopener noreferrer">
+          <a className="pi-supporter" href="https://isis.univ-jfc.fr/" target="_blank" rel="noopener noreferrer">
             <div className="pi-supporter__logo">
-              <img src="/assets/inserm.png" alt="Inserm" />
+              <img src="/assets/isis.png" alt="ISIS" />
             </div>
-            <span className="pi-supporter__name">Inserm</span>
+            <span className="pi-supporter__name">École ISIS — Castres</span>
           </a>
         </div>
       </section>
@@ -200,6 +225,51 @@ export default function PlusInfos() {
               <div className="pi-link-card__title">CHU Sainte-Justine — NF1</div>
               <p className="pi-link-card__desc">La clinique NF1 offre une expertise et des soins spécialisés avec une attention particulière au développement de l'enfant.</p>
             </a>
+
+            <a className="pi-link-card" href="https://enseignement.chusj.org/fr/bibliotheques/les-Ressources/Guide-Info-famille?NodeAlias=Neurofibromatose" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">Guide Info-famille — Neurofibromatose</div>
+              <p className="pi-link-card__desc">Guide du CHU Sainte-Justine destiné aux familles pour mieux comprendre la neurofibromatose et les ressources disponibles.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://www.gerneurofibromatosis.ch/documentation/" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">GER-NF — Documentation complète</div>
+              <p className="pi-link-card__desc">Documentation et brochures du Groupement d'Entraide Romand pour les personnes atteintes de Neurofibromatose.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://anfq.ca/wp-content/uploads/2023/11/guide-sur-la-nf-a-lintention-des-parents.pdf" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">Guide sur la NF à l’intention des parents</div>
+              <p className="pi-link-card__desc">ANFQ — Comment aider les enfants ayant des difficultés d’apprentissage associées à la neurofibromatose de type 1.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://anfq.ca/" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">Association de la Neurofibromatose du Québec</div>
+              <p className="pi-link-card__desc">Mission d’améliorer la vie des gens touchés par la NF, favoriser la recherche et diffuser les connaissances.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://cancer.ca/fr/cancer-information/resources/glossary/n/neurofibromatosis-type-1" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">Société canadienne du cancer — NF1</div>
+              <p className="pi-link-card__desc">Description de la maladie (de von Recklinghausen) et risques reliés au cancer.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://www.aboutkidshealth.ca/fr/santeaz/genetics/neurofibromatosis-type-1-nf1/?language=fr" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">AboutKidsHealth — NF1</div>
+              <p className="pi-link-card__desc">Apprenez-en davantage sur les anomalies qui sont associées à cette affection.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://anfq.ca/wp-content/uploads/2023/10/nf-guide-pour-educateur.pdf" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">NF1 Guide à l'intention des éducateurs</div>
+              <p className="pi-link-card__desc">Pour mieux comprendre les besoins spéciaux des enfants atteints de NF1 en milieu scolaire.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://www.chumontreal.qc.ca/patients/centre-dexpertise-en-neurofibromatose/je-suis-patient/tout-savoir-neurofibromatose" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">CHUM — Tout savoir sur la neurofibromatose</div>
+              <p className="pi-link-card__desc">Qu’est-ce que la neurofibromatose, causes, symptômes et diagnostic etc.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://www.gerneurofibromatosis.ch/la-rubrique-scientifique-4-la-douleur-chez-les-patients-nf1/" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">GER-NF — La douleur chez les patients NF1</div>
+              <p className="pi-link-card__desc">Rubrique scientifique sur la douleur chez les patients NF1.</p>
+            </a>
           </div>
         </div>
       </section>
@@ -248,7 +318,7 @@ export default function PlusInfos() {
         <h2>Quelques lectures</h2>
         <div className="pi-books__grid">
           <a className="pi-book-card" href="https://www.fondation-ipsen.org/fr/book-lab/neurofibromatose-1/" target="_blank" rel="noopener noreferrer">
-            <div className="pi-book-card__cover" aria-hidden="true" />
+            <img src="/assets/neurofibromatose-1.png" className="pi-book-card__cover" alt="Couverture La Neurofibromatose #1" />
             <div className="pi-book-card__info">
               <h3 className="pi-book-card__title">La Neurofibromatose #1</h3>
               <p className="pi-book-card__author">Fondation Ipsen — My Life Beyond — 5-9 ans</p>
@@ -260,7 +330,7 @@ export default function PlusInfos() {
           </a>
 
           <a className="pi-book-card" href="https://www.anrfrance.fr/collect/description/159610-c-librairie-ose" target="_blank" rel="noopener noreferrer">
-            <div className="pi-book-card__cover" aria-hidden="true" />
+            <img src="/assets/a-fleur-de-peau.png" className="pi-book-card__cover" alt="Couverture À fleur de peau" />
             <div className="pi-book-card__info">
               <h3 className="pi-book-card__title">À fleur de peau</h3>
               <p className="pi-book-card__author">Joël Alessandra — Filidalo — 12 ans+</p>
@@ -271,8 +341,8 @@ export default function PlusInfos() {
             </div>
           </a>
 
-          <a className="pi-book-card" href="https://www.anrfrance.fr/collect/description/159610-c-librairie-ose" target="_blank" rel="noopener noreferrer">
-            <div className="pi-book-card__cover" aria-hidden="true" />
+          <a className="pi-book-card" href="https://www.anrfrance.fr/page/2981765-librairie-ose" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/gaspard.png" className="pi-book-card__cover" alt="Couverture Gaspard" />
             <div className="pi-book-card__info">
               <h3 className="pi-book-card__title">Gaspard</h3>
               <p className="pi-book-card__author">ANR France — Librairie OSE</p>
@@ -282,8 +352,8 @@ export default function PlusInfos() {
             </div>
           </a>
 
-          <a className="pi-book-card" href="https://www.lesarenes.fr/livre/les-pansements-invisibles/" target="_blank" rel="noopener noreferrer">
-            <div className="pi-book-card__cover" aria-hidden="true" />
+          <a className="pi-book-card" href="https://arenes.fr/livre/les-pansements-invisibles/" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/les-pansements-invisibles.png" className="pi-book-card__cover" alt="Couverture Les pansements invisibles" />
             <div className="pi-book-card__info">
               <h3 className="pi-book-card__title">Les pansements invisibles</h3>
               <p className="pi-book-card__author">Baptiste Beaulieu, Qin Leng — Les Arènes</p>
@@ -293,8 +363,8 @@ export default function PlusInfos() {
             </div>
           </a>
 
-          <a className="pi-book-card" href="https://www.lesarenes.fr/livre/les-gens-sont-beaux/" target="_blank" rel="noopener noreferrer">
-            <div className="pi-book-card__cover" aria-hidden="true" />
+          <a className="pi-book-card" href="https://arenes.fr/livre/les-gens-sont-beaux/" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/les-gens-sont-beaux.png" className="pi-book-card__cover" alt="Couverture Les gens sont beaux" />
             <div className="pi-book-card__info">
               <h3 className="pi-book-card__title">Les gens sont beaux</h3>
               <p className="pi-book-card__author">Baptiste Beaulieu, Qin Leng — Les Arènes</p>
@@ -304,11 +374,11 @@ export default function PlusInfos() {
             </div>
           </a>
 
-          <a className="pi-book-card" href="https://www.youtube.com/results?search_query=la+petite+casserole+d+anatole" target="_blank" rel="noopener noreferrer">
-            <div className="pi-book-card__cover" aria-hidden="true" />
+          <a className="pi-book-card" href="https://www.youtube.com/watch?v=RlNOUx9o8Lo" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/Anatole.png" className="pi-book-card__cover" alt="Couverture La Petite Casserole d'Anatole" />
             <div className="pi-book-card__info">
               <h3 className="pi-book-card__title">La Petite Casserole d'Anatole</h3>
-              <p className="pi-book-card__author">Éric Montchaud</p>
+              <p className="pi-book-card__author">Isabelle Carrier — Bilboquet</p>
               <p className="pi-book-card__desc">
                 L'histoire touchante d'Anatole qui traîne toujours derrière lui sa petite casserole — une métaphore poétique sur la différence.
               </p>
@@ -326,16 +396,7 @@ export default function PlusInfos() {
             </div>
           </a>
 
-          <a className="pi-book-card" href="https://catalogue.santecom.qc.ca/cgi-bin/koha/opac-detail.pl?biblionumber=107108" target="_blank" rel="noopener noreferrer">
-            <div className="pi-book-card__cover" aria-hidden="true" />
-            <div className="pi-book-card__info">
-              <h3 className="pi-book-card__title">Faire face à la neurofibromatose</h3>
-              <p className="pi-book-card__author">National Neurofibromatosis Foundation — 12 ans+</p>
-              <p className="pi-book-card__desc">
-                Guide pour les adolescents : diagnostic, effets, croissance, troubles d'apprentissage, génétique et recherche en cours.
-              </p>
-            </div>
-          </a>
+
         </div>
       </section>
 

@@ -832,3 +832,161 @@ body {
     opacity: .78;
   }
 }
+
+/* =========================================================
+   RESPONSIVE — Tablet (≤ 1024px)
+========================================================= */
+@media (max-width: 1024px) {
+  .obj--boussole {
+    width: 11%;
+    height: 14%;
+  }
+
+  .obj--longuevue {
+    width: 19%;
+    height: 14%;
+  }
+
+  .obj--bateau {
+    width: 19%;
+    height: 18%;
+  }
+
+  .obj--capitaine {
+    width: 30%;
+  }
+
+  .obj--plusinfo {
+    width: 26%;
+    height: 12%;
+  }
+
+  .obj--iceberg {
+    width: 22%;
+    height: 44%;
+  }
+
+  .hotspot--iceberg {
+    width: 22%;
+    height: 44%;
+  }
+
+  .modal__content {
+    width: min(800px, 94vw);
+    height: min(480px, 55vh);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — Mobile (≤ 640px)
+========================================================= */
+@media (max-width: 640px) {
+
+  /* Enlarge all clickable objects for touch */
+  .obj--boussole {
+    width: 14%;
+    height: 16%;
+    left: 10%;
+    top: 12%;
+  }
+
+  .obj--longuevue {
+    width: 22%;
+    height: 16%;
+    left: 74%;
+    top: 18%;
+  }
+
+  .obj--bateau {
+    width: 22%;
+    height: 20%;
+    left: 62%;
+    top: 54%;
+  }
+
+  .obj--capitaine {
+    width: 34%;
+    height: 50%;
+    left: 0%;
+    top: 50%;
+  }
+
+  .obj--plusinfo {
+    width: 30%;
+    height: 12%;
+    left: 68%;
+    top: 86%;
+  }
+
+  .obj--iceberg {
+    width: 26%;
+    height: 46%;
+    left: 40%;
+    top: 24%;
+  }
+
+  .hotspot--iceberg {
+    width: 26%;
+    height: 46%;
+    left: 40%;
+    top: 24%;
+  }
+
+  /* Modal: fill more of the screen on phones */
+  .modal__content {
+    width: 96vw;
+    height: auto;
+    max-height: 70vh;
+    border-radius: 14px;
+  }
+
+  .modal__close {
+    top: 6px;
+    right: 6px;
+    padding: 12px 14px;
+    font-size: 18px;
+  }
+
+  /* Reduce heavy FX on mobile for performance */
+  .fx--clouds {
+    opacity: .35;
+  }
+
+  .fx--sparkles {
+    opacity: .5;
+  }
+
+  .fx--sky {
+    opacity: .35;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — Small phones (≤ 400px)
+========================================================= */
+@media (max-width: 400px) {
+  .obj--boussole {
+    width: 16%;
+    height: 18%;
+  }
+
+  .obj--longuevue {
+    width: 24%;
+    height: 18%;
+  }
+
+  .obj--bateau {
+    width: 24%;
+    height: 22%;
+  }
+
+  .obj--plusinfo {
+    width: 34%;
+    height: 14%;
+  }
+
+  .modal__content {
+    width: 98vw;
+    border-radius: 10px;
+  }
+}

@@ -1,16 +1,17 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import "./style.css"
-import { Link } from "react-router-dom"
+
+import Boussole from "./Boussole"
+import Longuevue from "./Longuevue"
+import Bateau from "./Bateau"
+import Capitaine from "./Capitaine"
+import PlusInfo from "./PlusInfo"
+import IcebergHotspot from "./IcebergHotspot"
 
 export default function Home() {
   const sceneRef = useRef<HTMLElement | null>(null)
 
-  // --- NEW: longuevue overlay state ---
-  const [showLonguevue, setShowLonguevue] = useState(false)
-  const [longuevueStage, setLonguevueStage] = useState<"video" | "photo">("video")
-  const videoRef = useRef<HTMLVideoElement | null>(null)
-
-  // Parallax (your existing code)
+  // Parallax mouse tracking
   useEffect(() => {
     const scene = sceneRef.current
     if (!scene) return
@@ -43,40 +44,6 @@ export default function Home() {
     }
   }, [])
 
-  // --- NEW: when opening, reset to video and autoplay ---
-  useEffect(() => {
-    if (!showLonguevue) return
-    setLonguevueStage("video")
-
-    // Give React time to render the <video>
-    requestAnimationFrame(() => {
-      const v = videoRef.current
-      if (!v) return
-      v.currentTime = 0
-      // autoplay can be blocked unless muted; we set muted below
-      v.play().catch(() => {
-        // If autoplay blocked, user can press play (controls enabled)
-      })
-    })
-  }, [showLonguevue])
-
-  // --- NEW: close on ESC ---
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setShowLonguevue(false)
-    }
-    if (showLonguevue) window.addEventListener("keydown", onKey)
-    return () => window.removeEventListener("keydown", onKey)
-  }, [showLonguevue])
-
-  const openLonguevue = () => {
-    setShowLonguevue(true)
-  }
-
-  const closeLonguevue = () => {
-    setShowLonguevue(false)
-  }
-
   return (
     <main ref={sceneRef} className="scene scene--fx" aria-label="Page d'accueil CAPITNF1">
       {/* Fond */}
@@ -88,61 +55,18 @@ export default function Home() {
       <div className="fx fx--water" aria-hidden="true" />
       <div className="fx fx--sparkles" aria-hidden="true" />
 
-      {/* overlays */}
+      {/* Overlays */}
       <img src="/assets/title.PNG" className="layer overlay overlay--fx" alt="" />
       <img src="/assets/iceberg_layer.PNG" className="layer overlay overlay--fx2" alt="" />
       <div className="fx fx--icebergShadow" aria-hidden="true" />
-      {/* objets cliquables */}
-      <a className="obj obj--boussole"><img src="/assets/boussole.png" alt="" /></a>
 
-      {/* ✅ Longuevue: button opens overlay */}
-      <button
-        type="button"
-        className="obj obj--longuevue objBtn"
-        onClick={openLonguevue}
-        aria-label="Ouvrir la longuevue"
-      >
-        <img src="/assets/longuevue.png" alt="" />
-      </button>
-
-      <a className="obj obj--bateau"><img src="/assets/bateau.png" alt="" /></a>
-      <a className="obj obj--capitaine"><img src="/assets/capitaine.PNG" alt="" /></a>
-      <Link className="obj obj--plusinfo" to="/informations"><img src="/assets/info.png" alt="" /></Link>
-
-      <a className="hotspot hotspot--iceberg" href="/iceberg.html" aria-label="Aller vers l'Iceberg" />
-
-      {/* ✅ Longuevue overlay */}
-      {showLonguevue && (
-        <div className="modal" role="dialog" aria-modal="true" aria-label="Longuevue">
-          {/* click outside to close */}
-          <div className="modal__backdrop" onClick={closeLonguevue} />
-
-          <div className="modal__content">
-            <button className="modal__close" type="button" onClick={closeLonguevue} aria-label="Fermer">
-              ✕
-            </button>
-
-            {longuevueStage === "video" ? (
-              <video
-                ref={videoRef}
-                className="modal__media"
-                src="/assets/4 Second Timer.mp4"
-                playsInline
-                muted
-                // controls optional; keep controls to avoid autoplay issues on some browsers
-                controls
-                onEnded={() => setLonguevueStage("photo")}
-              />
-            ) : (
-              <img
-                className="modal__media"
-                src="/assets/BG.png"
-                alt="Image après la vidéo"
-              />
-            )}
-          </div>
-        </div>
-      )}
+      {/* Objets cliquables — chacun dans son propre composant */}
+      <Boussole />
+      <Longuevue />
+      <Bateau />
+      <Capitaine />
+      <PlusInfo />
+      <IcebergHotspot />
     </main>
   )
 }
