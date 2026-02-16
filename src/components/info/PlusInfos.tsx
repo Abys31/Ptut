@@ -235,6 +235,41 @@ export default function PlusInfos() {
               <div className="pi-link-card__title">GER-NF — Documentation complète</div>
               <p className="pi-link-card__desc">Documentation et brochures du Groupement d'Entraide Romand pour les personnes atteintes de Neurofibromatose.</p>
             </a>
+
+            <a className="pi-link-card" href="https://anfq.ca/wp-content/uploads/2023/11/guide-sur-la-nf-a-lintention-des-parents.pdf" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">Guide sur la NF à l’intention des parents</div>
+              <p className="pi-link-card__desc">ANFQ — Comment aider les enfants ayant des difficultés d’apprentissage associées à la neurofibromatose de type 1.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://anfq.ca/" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">Association de la Neurofibromatose du Québec</div>
+              <p className="pi-link-card__desc">Mission d’améliorer la vie des gens touchés par la NF, favoriser la recherche et diffuser les connaissances.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://cancer.ca/fr/cancer-information/resources/glossary/n/neurofibromatosis-type-1" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">Société canadienne du cancer — NF1</div>
+              <p className="pi-link-card__desc">Description de la maladie (de von Recklinghausen) et risques reliés au cancer.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://www.aboutkidshealth.ca/fr/santeaz/genetics/neurofibromatosis-type-1-nf1/?language=fr" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">AboutKidsHealth — NF1</div>
+              <p className="pi-link-card__desc">Apprenez-en davantage sur les anomalies qui sont associées à cette affection.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://anfq.ca/wp-content/uploads/2023/10/nf-guide-pour-educateur.pdf" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">NF1 Guide à l'intention des éducateurs</div>
+              <p className="pi-link-card__desc">Pour mieux comprendre les besoins spéciaux des enfants atteints de NF1 en milieu scolaire.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://www.chumontreal.qc.ca/patients/centre-dexpertise-en-neurofibromatose/je-suis-patient/tout-savoir-neurofibromatose" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">CHUM — Tout savoir sur la neurofibromatose</div>
+              <p className="pi-link-card__desc">Qu’est-ce que la neurofibromatose, causes, symptômes et diagnostic etc.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://www.gerneurofibromatosis.ch/la-rubrique-scientifique-4-la-douleur-chez-les-patients-nf1/" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">GER-NF — La douleur chez les patients NF1</div>
+              <p className="pi-link-card__desc">Rubrique scientifique sur la douleur chez les patients NF1.</p>
+            </a>
           </div>
         </div>
       </section>
@@ -283,7 +318,7 @@ export default function PlusInfos() {
         <h2>Quelques lectures</h2>
         <div className="pi-books__grid">
           <a className="pi-book-card" href="https://www.fondation-ipsen.org/fr/book-lab/neurofibromatose-1/" target="_blank" rel="noopener noreferrer">
-            <div className="pi-book-card__cover" aria-hidden="true" />
+            <img src="/assets/neurofibromatose-1.png" className="pi-book-card__cover" alt="Couverture La Neurofibromatose #1" />
             <div className="pi-book-card__info">
               <h3 className="pi-book-card__title">La Neurofibromatose #1</h3>
               <p className="pi-book-card__author">Fondation Ipsen — My Life Beyond — 5-9 ans</p>
@@ -295,7 +330,7 @@ export default function PlusInfos() {
           </a>
 
           <a className="pi-book-card" href="https://www.anrfrance.fr/collect/description/159610-c-librairie-ose" target="_blank" rel="noopener noreferrer">
-            <div className="pi-book-card__cover" aria-hidden="true" />
+            <img src="/assets/a-fleur-de-peau.png" className="pi-book-card__cover" alt="Couverture À fleur de peau" />
             <div className="pi-book-card__info">
               <h3 className="pi-book-card__title">À fleur de peau</h3>
               <p className="pi-book-card__author">Joël Alessandra — Filidalo — 12 ans+</p>
@@ -307,7 +342,7 @@ export default function PlusInfos() {
           </a>
 
           <a className="pi-book-card" href="https://www.anrfrance.fr/page/2981765-librairie-ose" target="_blank" rel="noopener noreferrer">
-            <div className="pi-book-card__cover" aria-hidden="true" />
+            <img src="/assets/gaspard.png" className="pi-book-card__cover" alt="Couverture Gaspard" />
             <div className="pi-book-card__info">
               <h3 className="pi-book-card__title">Gaspard</h3>
               <p className="pi-book-card__author">ANR France — Librairie OSE</p>
@@ -317,8 +352,8 @@ export default function PlusInfos() {
             </div>
           </a>
 
-          <a className="pi-book-card" href="https://www.lesarenes.fr/livre/les-pansements-invisibles/" target="_blank" rel="noopener noreferrer">
-            <div className="pi-book-card__cover" aria-hidden="true" />
+          <a className="pi-book-card" href="https://arenes.fr/livre/les-pansements-invisibles/" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/les-pansements-invisibles.png" className="pi-book-card__cover" alt="Couverture Les pansements invisibles" />
             <div className="pi-book-card__info">
               <h3 className="pi-book-card__title">Les pansements invisibles</h3>
               <p className="pi-book-card__author">Baptiste Beaulieu, Qin Leng — Les Arènes</p>
@@ -328,8 +363,8 @@ export default function PlusInfos() {
             </div>
           </a>
 
-          <a className="pi-book-card" href="https://www.lesarenes.fr/livre/les-gens-sont-beaux/" target="_blank" rel="noopener noreferrer">
-            <div className="pi-book-card__cover" aria-hidden="true" />
+          <a className="pi-book-card" href="https://arenes.fr/livre/les-gens-sont-beaux/" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/les-gens-sont-beaux.png" className="pi-book-card__cover" alt="Couverture Les gens sont beaux" />
             <div className="pi-book-card__info">
               <h3 className="pi-book-card__title">Les gens sont beaux</h3>
               <p className="pi-book-card__author">Baptiste Beaulieu, Qin Leng — Les Arènes</p>
@@ -339,8 +374,8 @@ export default function PlusInfos() {
             </div>
           </a>
 
-          <a className="pi-book-card" href="https://www.leslibraires.fr/livre/5694843-la-petite-casserole-d-anatole-isabelle-carrier-bilboquet" target="_blank" rel="noopener noreferrer">
-            <div className="pi-book-card__cover" aria-hidden="true" />
+          <a className="pi-book-card" href="https://www.youtube.com/watch?v=RlNOUx9o8Lo" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/Anatole.png" className="pi-book-card__cover" alt="Couverture La Petite Casserole d'Anatole" />
             <div className="pi-book-card__info">
               <h3 className="pi-book-card__title">La Petite Casserole d'Anatole</h3>
               <p className="pi-book-card__author">Isabelle Carrier — Bilboquet</p>
@@ -361,16 +396,7 @@ export default function PlusInfos() {
             </div>
           </a>
 
-          <a className="pi-book-card" href="https://catalogue.santecom.qc.ca/cgi-bin/koha/opac-detail.pl?biblionumber=107108" target="_blank" rel="noopener noreferrer">
-            <div className="pi-book-card__cover" aria-hidden="true" />
-            <div className="pi-book-card__info">
-              <h3 className="pi-book-card__title">Faire face à la neurofibromatose</h3>
-              <p className="pi-book-card__author">National Neurofibromatosis Foundation — 12 ans+</p>
-              <p className="pi-book-card__desc">
-                Guide pour les adolescents : diagnostic, effets, croissance, troubles d'apprentissage, génétique et recherche en cours.
-              </p>
-            </div>
-          </a>
+
         </div>
       </section>
 
