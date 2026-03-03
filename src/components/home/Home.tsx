@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import "./style.css"
 
 import Bateau from "./Bateau"
@@ -8,6 +9,16 @@ import Boussole from "./Boussole"
 
 export default function Home() {
   const sceneRef = useRef<HTMLElement | null>(null)
+  const navigate = useNavigate()
+  const [isPlayingTransition, setIsPlayingTransition] = useState(false)
+
+  const handleCaptainClick = () => {
+    setIsPlayingTransition(true)
+  }
+
+  const handleVideoEnd = () => {
+    navigate('/questions')
+  }
 
   // Parallax mouse tracking
   useEffect(() => {
@@ -58,15 +69,28 @@ export default function Home() {
 
       {/* Éléments interactifs superposés */}
       <Bateau />
-      <Capitaine />
+      <Capitaine onClick={handleCaptainClick} />
       <PlusInfo />
-      <Boussole />
+      <Boussole onClick={() => navigate('/boussole')} />
 
       {/* Baleine */}
       <img src="/assets/bon_balaine.png" className="obj obj--balaine" alt="" />
 
-      {/* Zone cliquable iceberg du fond */}
-      <a href="/iceberg" className="hotspot hotspot--iceberg" aria-label="Explorer l'iceberg" />
+      {/* Zone cliquable iceberg du fond — navigation React Router */}
+      <Link to="/iceberg" className="hotspot hotspot--iceberg" aria-label="Explorer l'iceberg" />
+
+      {/* Transition Vidéo Overlay */}
+      {isPlayingTransition && (
+        <div className="home-transition-overlay">
+          <video
+            src="/assets/transition.mp4"
+            autoPlay
+            playsInline
+            onEnded={handleVideoEnd}
+            className="home-transition-video"
+          />
+        </div>
+      )}
     </main>
   )
 }

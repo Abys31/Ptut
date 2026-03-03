@@ -25,6 +25,130 @@ body {
 }
 
 /* =========================
+   Global Boussole Button (visible on all pages)
+========================= */
+.global-boussole {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 60, 120, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.global-boussole:hover {
+  transform: scale(1.15) rotate(15deg);
+  box-shadow: 0 6px 24px rgba(0, 100, 200, 0.35);
+}
+
+.global-boussole img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* =========================
+   Rotate-to-Landscape Overlay (mobile portrait only)
+========================= */
+.rotate-overlay {
+  display: none;
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+  .rotate-overlay {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: linear-gradient(135deg, #0a2a4a 0%, #1a4a7a 50%, #0d3d6d 100%);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .rotate-content {
+    text-align: center;
+    color: white;
+    padding: 30px;
+    animation: rotateContentFadeIn 0.5s ease;
+  }
+
+  .rotate-icon {
+    font-size: 80px;
+    animation: rotatePhoneAnim 2s ease-in-out infinite;
+    margin-bottom: 20px;
+  }
+
+  .rotate-text {
+    font-family: 'Patrick Hand', 'Nunito', sans-serif;
+    font-size: 22px;
+    line-height: 1.5;
+    margin: 0 0 20px;
+    color: #b8dcf0;
+  }
+
+  .rotate-arrow {
+    font-size: 50px;
+    color: #5bbde6;
+    animation: rotateArrowPulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes rotatePhoneAnim {
+
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+
+    25% {
+      transform: rotate(45deg);
+    }
+
+    75% {
+      transform: rotate(90deg);
+    }
+  }
+
+  @keyframes rotateArrowPulse {
+
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes rotateContentFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* =========================
    Scene base
 ========================= */
 .scene {
@@ -822,6 +946,26 @@ body {
 }
 
 /* =========================================================
+   Transition Vidéo
+========================================================= */
+.home-transition-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.home-transition-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* =========================================================
    Iceberg underwater shadow (FX layer)
    NOTE: In TSX add: <div className="fx fx--icebergShadow" />
 ========================================================= */
@@ -925,54 +1069,73 @@ body {
 ========================================================= */
 @media (max-width: 640px) {
 
-  /* Enlarge all clickable objects for touch */
+  .scene {
+    overflow: hidden;
+  }
+
+  /* Boussole — top left, sized for touch */
   .obj--boussole {
-    width: 14%;
-    height: 16%;
-    left: 10%;
-    top: 12%;
+    width: 12%;
+    height: 14%;
+    left: 4%;
+    top: 10%;
   }
 
-  .obj--longuevue {
-    width: 22%;
-    height: 16%;
-    left: 74%;
-    top: 18%;
-  }
-
+  /* Bateau — mid right, kept within bounds */
   .obj--bateau {
-    width: 22%;
-    height: 20%;
-    left: 62%;
+    width: 20%;
+    height: 18%;
+    left: 55%;
     top: 54%;
   }
 
+  /* Capitaine — left side */
   .obj--capitaine {
-    width: 34%;
-    height: 50%;
+    width: 30%;
+    height: 45%;
     left: 0%;
     top: 50%;
   }
 
+  /* Plus info — bottom right but capped */
   .obj--plusinfo {
-    width: 30%;
-    height: 12%;
-    left: 68%;
+    width: 24%;
+    height: 10%;
+    left: 70%;
     top: 86%;
   }
 
-  .obj--iceberg {
-    width: 26%;
-    height: 46%;
-    left: 40%;
+  /* Iceberg + hotspot */
+  .obj--iceberg,
+  .hotspot--iceberg {
+    width: 24%;
+    height: 44%;
+    left: 38%;
     top: 24%;
   }
 
-  .hotspot--iceberg {
-    width: 26%;
-    height: 46%;
-    left: 40%;
-    top: 24%;
+  /* Balaine — keep within view */
+  .obj--balaine {
+    max-width: 20%;
+  }
+
+  /* Title — keep contained */
+  .overlay--title {
+    max-width: 50%;
+    top: 2% !important;
+  }
+
+  /* Global boussole button — smaller on mobile */
+  .global-boussole {
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .global-boussole img {
+    width: 28px;
+    height: 28px;
   }
 
   /* Modal: fill more of the screen on phones */
@@ -1031,5 +1194,170 @@ body {
   .modal__content {
     width: 98vw;
     border-radius: 10px;
+  }
+}
+
+/* =========================================================
+   Guide Boussole – Overlay Mobile-Style
+========================================================= */
+.guide-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 20, 50, 0.65);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: guideOverlayIn 0.3s ease;
+}
+
+.guide-panel {
+  position: relative;
+  width: min(420px, 92vw);
+  max-height: 88vh;
+  background: linear-gradient(180deg, #c8edfa 0%, #e8f6fd 30%, #ffffff 100%);
+  border-radius: 28px;
+  box-shadow: 0 24px 80px rgba(0, 30, 80, 0.4);
+  overflow: hidden;
+  animation: guidePanelIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.guide-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  border: none;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: background 0.2s, transform 0.15s;
+}
+
+.guide-close:hover {
+  background: #fff;
+  transform: scale(1.1);
+}
+
+.guide-scroll {
+  overflow-y: auto;
+  max-height: 88vh;
+  padding: 30px 24px 40px;
+}
+
+.guide-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.guide-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 80, 150, 0.2);
+  border-radius: 10px;
+}
+
+/* ── En-tête ── */
+.guide-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.guide-header-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  animation: guideSpin 6s linear infinite;
+}
+
+.guide-title {
+  font-size: 26px;
+  font-weight: 900;
+  color: #0d3a5c;
+  margin: 0;
+}
+
+/* ── Sections ── */
+.guide-section {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  border-radius: 18px;
+  padding: 20px 18px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 14px rgba(0, 50, 100, 0.08);
+}
+
+.guide-section h2 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0d3a5c;
+  margin: 0 0 10px;
+}
+
+.guide-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #2a4a65;
+  margin: 0 0 8px;
+}
+
+.guide-section p:last-child {
+  margin-bottom: 0;
+}
+
+.guide-emoji {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.guide-section-icon {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.guide-section-icon img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+@keyframes guideOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes guidePanelIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes guideSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
