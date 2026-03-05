@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import "./style.css"
 import Bateau from "./Bateau"
@@ -10,9 +10,13 @@ export default function Home() {
   const sceneRef = useRef<HTMLElement | null>(null)
   const navigate = useNavigate()
 
-  // Navigate immediately on captain click
+  const [showTransition, setShowTransition] = useState(false)
+  const [videoFinished, setVideoFinished] = useState(false)
+
+  // Show transition video on captain click
   const handleCaptainClick = () => {
-    navigate("/questions")
+    setShowTransition(true)
+    setVideoFinished(false)
   }
 
   // Parallax mouse tracking
@@ -57,6 +61,98 @@ export default function Home() {
       <Boussole onClick={() => navigate("/boussole")} />
       <img src="/assets/bon_balaine.png" className="obj obj--balaine" alt="" />
       <Link to="/iceberg" className="hotspot hotspot--iceberg" aria-label="Explorer l'iceberg" />
+
+      {/* Vidéo de transition vers /questions (en mode Pop-up) */}
+      {showTransition && (
+        <div style={{
+          position: 'fixed',
+          inset: 0,
+          zIndex: 999999,
+          background: 'rgba(0, 0, 0, 0.75)',
+          backdropFilter: 'blur(4px)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '20px'
+        }}>
+          {/* Conteneur de la vidéo façon "Pop-up" */}
+          <div style={{
+            position: 'relative',
+            width: '100%',
+            maxWidth: '800px',
+            backgroundColor: '#000',
+            borderRadius: '16px',
+            overflow: 'hidden',
+            boxShadow: '0 10px 40px rgba(0,0,0,0.5)',
+            aspectRatio: '16/9'
+          }}>
+            <button
+              onClick={() => setShowTransition(false)}
+              style={{
+                position: 'absolute',
+                top: 10,
+                right: 15,
+                zIndex: 10,
+                background: 'rgba(0,0,0,0.5)',
+                color: 'white',
+                border: 'none',
+                borderRadius: '50%',
+                width: '36px',
+                height: '36px',
+                fontSize: '20px',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >✕</button>
+
+            <video
+              src="/assets/transition.mp4"
+              autoPlay
+              playsInline
+              onEnded={() => setVideoFinished(true)}
+              onError={(e) => {
+                console.error("Video error:", e);
+                setVideoFinished(true); // Permet de continuer si la vidéo échoue
+              }}
+              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+            />
+
+            {/* Bouton Continuer qui apparaît à la fin de la vidéo */}
+            {videoFinished && (
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'rgba(0,0,0,0.3)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <button
+                  onClick={() => navigate("/questions")}
+                  style={{
+                    padding: '12px 32px',
+                    fontSize: '22px',
+                    fontFamily: '"Patrick Hand", cursive',
+                    backgroundColor: '#1E90FF',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '30px',
+                    cursor: 'pointer',
+                    boxShadow: '0 4px 15px rgba(0,0,0,0.3)',
+                    transition: 'transform 0.2s'
+                  }}
+                  onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                  onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                >
+                  Continuer vers les questions
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </main>
   )
 }
