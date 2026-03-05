@@ -37,28 +37,41 @@ body {
   padding: 0;
   border: none;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(0, 60, 120, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.2s, box-shadow 0.2s;
+  background: transparent !important;
 }
 
 .global-boussole:hover {
   transform: scale(1.15) rotate(15deg);
-  box-shadow: 0 6px 24px rgba(0, 100, 200, 0.35);
 }
 
 .global-boussole img {
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
+  width: 70px;
+  height: 70px;
   pointer-events: none;
 }
+.home-transition-overlay--slideUp{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
 
+  /* looks like your sea/sky vibe */
+  background: linear-gradient(180deg, rgba(120,210,255,1), rgba(30,130,200,1));
+  transform: translateY(100%);
+
+  animation: slideUpCover 520ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+/* First phase: cover screen from bottom to top */
+@keyframes slideUpCover{
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0%); }
+}
 /* =========================
    Rotate-to-Landscape Overlay (mobile portrait only)
 ========================= */
@@ -396,15 +409,15 @@ body {
 .obj--bateau {
   right: 2%;
   left: auto;
-  top: 42%;
+  top: 32%;
   width: 26%;
-  height: 34%;
+  height: 44%;
 }
 
 /* Capitaine — aligne sur le capitaine du BG (gauche) */
 .obj--capitaine {
-  left: 0%;
-  top: 40%;
+  left: 5%;
+  top: 55%;
   width: 22%;
   height: 58%;
 }
@@ -413,10 +426,10 @@ body {
 .obj--plusinfo {
   right: -2%;
   left: auto;
-  bottom: 1%;
+  bottom: -13%;
   top: auto;
-  width: 24%;
-  height: 22%;
+  width: 30%;
+  height: 30%;
 }
 
 /* Boussole : haut gauche */
@@ -428,6 +441,7 @@ body {
   width: 8%;
   height: 14%;
   z-index: 4;
+  background: transparent !important;
 }
 
 /* Baleine : extrême gauche, dans l'eau */
@@ -435,8 +449,8 @@ body {
   left: 0%;
   right: auto;
   top: 55%;
-  width: 8%;
-  height: 12%;
+  width: 12%;
+  height: 14%;
   object-fit: contain;
   z-index: 2;
 }
@@ -445,8 +459,8 @@ body {
   left: 50%;
   top: 5%;
   transform: translateX(-50%);
-  width: 28%;
-  height: 72%;
+  width: 24%;
+  height: 62%;
   z-index: 1;
 }
 
@@ -465,12 +479,6 @@ body {
   transition: filter 220ms ease, box-shadow 220ms ease;
 }
 
-.hotspot:hover,
-.hotspot:focus-visible {
-  filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.6));
-  box-shadow: 0 0 30px 8px rgba(135, 206, 250, 0.35);
-  border-radius: 20px;
-}
 
 /* Zone cliquable sur l'iceberg du fond */
 .hotspot--iceberg {
@@ -620,7 +628,7 @@ body {
   left: 0;
   right: 0;
   bottom: auto;
-  height: 28%;
+  height: 48%;
   transform: translate3d(calc(var(--mx) * -10px), calc(var(--my) * -6px), 0);
   z-index: 3;
 }
@@ -1036,7 +1044,9 @@ body {
 
   .obj--bateau {
     width: 19%;
-    height: 18%;
+    height: 38%;
+    left: 75%;
+    top: 44%;
   }
 
   .obj--capitaine {
@@ -1045,7 +1055,9 @@ body {
 
   .obj--plusinfo {
     width: 26%;
-    height: 12%;
+    height: 32%;
+    left: 70%;
+    top: 80%;
   }
 
   .obj--iceberg {
