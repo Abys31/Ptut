@@ -19,7 +19,7 @@ function GlobalBoussole() {
       title="Guide du site"
       aria-label="Ouvrir le guide"
     >
-      <img src="/assets/boussole.png" alt="Boussole" draggable={false} />
+      <img src="/assets/boussole new.png" alt="Boussole" draggable={false} />
     </button>
   )
 }
