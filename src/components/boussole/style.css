@@ -30,7 +30,6 @@
    Hero / Header
 ========================= */
 .bg-hero {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,9 +45,8 @@
 .bg-hero__banner {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: auto;
+    height: auto;
     z-index: 0;
 }
 

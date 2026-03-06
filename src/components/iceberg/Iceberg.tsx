@@ -150,7 +150,7 @@ export default function Iceberg() {
     return (
         <div className="ice-page">
             <div className="ice-scene-wrapper">
-                <img src="/assets/page_off_iceberg.png" className="ice-bg-full" alt="Iceberg" draggable={false} />
+                <img src="public/assets/page_off_iceberg.png" className="ice-bg-full" alt="Iceberg" draggable={false} />
 
                 {items.map(item => {
                     if (item.type === "sign") {

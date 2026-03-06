@@ -18,7 +18,6 @@
    CONTENEUR SCÈNE — Proportion 16:9 Naturelle
    ══════════════════════════════════════════════════════ */
 .ice-scene-wrapper {
-    position: relative;
     /* Ratio 16:9 strict basé sur la largeur de l'écran */
     width: 100vw;
     height: 56.25vw;

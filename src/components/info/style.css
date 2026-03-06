@@ -10,7 +10,7 @@
 ========================= */
 .plusinfos {
   min-height: 100vh;
-  background: #d9f0fc;
+  background: #d1f7ff;
   color: #1a3a4a;
   font-family: 'Nunito', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
@@ -41,15 +41,7 @@
   text-align: center;
 }
 
-.pi-hero__banner {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  object-fit: contain;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
-}
+
 
 .pi-hero__back {
   position: absolute;
@@ -76,7 +68,7 @@
 }
 
 .pi-hero__banner {
-  max-width: 600px;
+  max-width: 1900px !important;
   width: 100%;
   height: auto;
 }
@@ -89,7 +81,22 @@
   margin: 0 auto;
   padding: 40px 24px;
 }
+.pi-hero__scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+  color: #6b7f8a;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Patrick Hand', cursive;
+}
 
+.pi-hero__arrow {
+  font-size: 22px;
+  line-height: 1;
+  margin-top: 2px;
+}
 .pi-section h2 {
   font-size: 32px;
   margin: 0 0 18px;
@@ -123,7 +130,7 @@
    Qui sommes-nous
 ========================= */
 .pi-team {
-  padding-top: 10px;
+  padding-top: 50px;
 }
 
 .pi-team__intro {
@@ -427,9 +434,12 @@
 /* =========================
    Quelques lectures
 ========================= */
+/* =========================
+   Quelques lectures
+========================= */
 .pi-books {
   padding-top: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 .pi-books h2 {
@@ -438,57 +448,63 @@
 
 .pi-books__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .pi-book-card {
   display: flex;
-  gap: 16px;
-  padding: 16px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 18px;
+  flex-direction: column;        /* ← colonne, plus côte à côte */
+  align-items: center;
+  text-align: center;
+  padding: 20px 16px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.9);
   box-shadow: 0 8px 24px rgba(46, 95, 126, 0.1);
   text-decoration: none;
   color: inherit;
   transition: transform 200ms ease, box-shadow 200ms ease;
+  height: 100%;                  /* ← même hauteur dans la grille */
 }
 
 .pi-book-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(46, 95, 126, 0.18);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(46, 95, 126, 0.2);
 }
 
 .pi-book-card__cover {
-  width: 80px;
-  height: 110px;
+  width: 110px;
+  height: 155px;                 /* ← ratio livre fixe */
   border-radius: 10px;
-  background: #c8e4f5;
-  flex-shrink: 0;
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  margin-bottom: 14px;
 }
 
 .pi-book-card__info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
+  flex: 1;                       /* ← pousse le titre/desc vers le haut */
 }
 
 .pi-book-card__title {
   font-family: 'Patrick Hand', cursive;
-  font-size: 17px;
+  font-size: 16px;
   color: #2e5f7e;
   margin: 0;
+  line-height: 1.3;
 }
 
 .pi-book-card__author {
   font-size: 12px;
   color: #6a8a9a;
   margin: 0;
+  font-style: italic;
 }
 
 .pi-book-card__desc {
@@ -496,11 +512,108 @@
   color: #3a5a6a;
   line-height: 1.5;
   margin: 4px 0 0;
-  /* clamp to 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;         /* ← max 3 lignes, tout uniforme */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
+/* Responsive */
+@media (max-width: 640px) {
+  .pi-books__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .pi-book-card__cover {
+    width: 80px;
+    height: 115px;
+  }
+}
+/* =========================
+   Sections hero style (Le projet + Qui sommes-nous)
+========================= */
+.pi-hero-section {
+  background: #2e5f7e;
+  padding: 60px 40px;
+}
+
+.pi-hero-section__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.pi-hero-section__mascot {
+  width: 155px;
+  flex-shrink: 0;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.25));
+}
+
+.pi-hero-section__content {
+  flex: 1;
+}
+
+.pi-hero-section__content h2 {
+  color: #fff;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 34px;
+  margin: 0 0 20px;
+}
+
+.pi-hero-section__bubble {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 28px 30px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Flèche pointant vers la mascotte */
+.pi-hero-section__bubble::before {
+  content: '';
+  position: absolute;
+  left: -18px;
+  top: 40px;
+  border-width: 10px 18px 10px 0;
+  border-style: solid;
+  border-color: transparent rgba(255, 255, 255, 0.95) transparent transparent;
+}
+
+.pi-hero-section__bubble p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #1a3a4a;
+  margin: 0 0 12px;
+}
+
+.pi-hero-section__bubble p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pi-hero-section {
+    padding: 40px 20px;
+  }
+
+  .pi-hero-section__inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 28px;
+  }
+
+  .pi-hero-section__mascot {
+    width: 160px;
+  }
+
+  .pi-hero-section__bubble::before {
+    display: none;
+  }
+}
 /* =========================
    Missing Styles
 ========================= */

@@ -5,7 +5,7 @@ export default function BoussoleGuide() {
         <div className="bguide">
             {/* ========================= HERO ========================= */}
             <header className="bg-hero">
-                <img src="/assets/fond_bousolle.jpg" className="bg-hero__banner" alt="CapitNF1 — Guide" />
+                <img src="public/assets/fond complet.JPG" className="bg-hero__banner" alt="CapitNF1 — Guide" />
                 <div className="bg-hero__overlay">
                     {/* Le titre est déjà intégré dans l'image de fond (fond_bousolle.jpg) */}
                 </div>

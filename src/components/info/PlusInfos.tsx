@@ -1,42 +1,79 @@
 import "./style.css"
 
+const smoothScrollTo = (targetId: string): void => {
+  const target = document.getElementById(targetId);
+  if (!target) return;
+  const start = window.scrollY;
+  const end = target.getBoundingClientRect().top + window.scrollY;
+  const distance = end - start;
+  const duration = 1400;
+  let startTime: number | null = null;
+
+  const easeInOutCubic = (t: number): number =>
+    t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+  const step = (timestamp: number): void => {
+    if (startTime === null) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    window.scrollTo(0, start + distance * easeInOutCubic(progress));
+    if (progress < 1) requestAnimationFrame(step);
+  };
+
+  requestAnimationFrame(step);
+};
+
 export default function PlusInfos() {
   return (
     <div className="plusinfos">
       {/* ========================= HERO ========================= */}
       <header className="pi-hero">
         <img src="/assets/ice_b.png" className="pi-hero__banner" alt="CapitNF1 — Plus d'Info" />
+        <div
+          className="pi-hero__scroll"
+          style={{ cursor: 'pointer' }}
+          onClick={() => smoothScrollTo('qui-sommes-nous')}
+        >
+          <span>scroll pour découvrir l'association!</span>
+          <div className="pi-hero__arrow">⌄</div>
+        </div>
       </header>
-
+      
       {/* ========================= LE PROJET ========================= */}
-      <section className="pi-section pi-projet">
-        <div className="pi-card">
-          <h2>Le projet</h2>
-          <p>
-            CapitNF1 est un projet dont l'idée a germé courant 2025. Il s'agit de répondre à un besoin
-            d'information de l'enfant atteint de NF1 mais aussi de ses pairs (sa fratrie, ses camarades
-            de classe) en expliquant de façon ludique et adaptée la maladie, les symptômes et le parcours
-            de soin fréquemment proposé à l'enfant.
-          </p>
-          <p>
-            Nous avons souhaité concevoir un outil disponible et accessible facilement à tous et toutes
-            et l'interface numérique s'est rapidement imposée à nous.
-          </p>
-          <p>
-            Ce dispositif éducatif numérique s'articule autour d'un personnage principal, <strong>CapitNF1</strong>{" "}
-            (Cap vers l'itinéraire de ma NF1), un petit capitaine atteint de NF1, personnage animé non genré
-            pour permettre l'identification de tous les enfants, via une image valorisante de capitaine qui
-            largue les amarres dans la découverte autonome de sa maladie.
-          </p>
-          <p>
-            La prise en main de l'interface est simplifiée pour permettre à l'enfant de naviguer seul et de
-            façon autonome sur toutes nos propositions de supports.
-          </p>
+      <section className="pi-hero-section pi-projet-hero">
+        <div className="pi-hero-section__inner">
+          <img src="public/assets/capitnf1.PNG" className="pi-hero-section__mascot" alt="CapitNF1" />
+          <div className="pi-hero-section__content">
+            <h2>Le projet</h2>
+            <div className="pi-hero-section__bubble">
+              <p>
+                CapitNF1 est un projet dont l'idée a germé courant 2025. Il s'agit de répondre à un besoin
+                d'information de l'enfant atteint de NF1 mais aussi de ses pairs (sa fratrie, ses camarades
+                de classe) en expliquant de façon ludique et adaptée la maladie, les symptômes et le parcours
+                de soin fréquemment proposé à l'enfant.
+              </p>
+              <p>
+                Nous avons souhaité concevoir un outil disponible et accessible facilement à tous et toutes
+                et l'interface numérique s'est rapidement imposée à nous.
+              </p>
+              <p>
+                Ce dispositif éducatif numérique s'articule autour d'un personnage principal, <strong>CapitNF1</strong>{" "}
+                (Cap vers l'itinéraire de ma NF1), un petit capitaine atteint de NF1, personnage animé non genré
+                pour permettre l'identification de tous les enfants, via une image valorisante de capitaine qui
+                largue les amarres dans la découverte autonome de sa maladie.
+              </p>
+              <p>
+                La prise en main de l'interface est simplifiée pour permettre à l'enfant de naviguer seul et de
+                façon autonome sur toutes nos propositions de supports.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
+      <br /><br />
 
       {/* ========================= QUI SOMMES-NOUS ========================= */}
-      <section className="pi-section pi-team">
+      <section className="pi-section pi-team" id="qui-sommes-nous">
         <h2>Qui sommes-nous ?</h2>
         <div className="pi-card pi-team__intro">
           <p>
@@ -260,13 +297,13 @@ export default function PlusInfos() {
             </a>
 
             <a className="pi-link-card" href="https://anfq.ca/wp-content/uploads/2023/11/guide-sur-la-nf-a-lintention-des-parents.pdf" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">Guide sur la NF à l’intention des parents</div>
-              <p className="pi-link-card__desc">ANFQ — Comment aider les enfants ayant des difficultés d’apprentissage associées à la neurofibromatose de type 1.</p>
+              <div className="pi-link-card__title">Guide sur la NF à l'intention des parents</div>
+              <p className="pi-link-card__desc">ANFQ — Comment aider les enfants ayant des difficultés d'apprentissage associées à la neurofibromatose de type 1.</p>
             </a>
 
             <a className="pi-link-card" href="https://anfq.ca/" target="_blank" rel="noopener noreferrer">
               <div className="pi-link-card__title">Association de la Neurofibromatose du Québec</div>
-              <p className="pi-link-card__desc">Mission d’améliorer la vie des gens touchés par la NF, favoriser la recherche et diffuser les connaissances.</p>
+              <p className="pi-link-card__desc">Mission d'améliorer la vie des gens touchés par la NF, favoriser la recherche et diffuser les connaissances.</p>
             </a>
 
             <a className="pi-link-card" href="https://cancer.ca/fr/cancer-information/resources/glossary/n/neurofibromatosis-type-1" target="_blank" rel="noopener noreferrer">
@@ -286,7 +323,7 @@ export default function PlusInfos() {
 
             <a className="pi-link-card" href="https://www.chumontreal.qc.ca/patients/centre-dexpertise-en-neurofibromatose/je-suis-patient/tout-savoir-neurofibromatose" target="_blank" rel="noopener noreferrer">
               <div className="pi-link-card__title">CHUM — Tout savoir sur la neurofibromatose</div>
-              <p className="pi-link-card__desc">Qu’est-ce que la neurofibromatose, causes, symptômes et diagnostic etc.</p>
+              <p className="pi-link-card__desc">Qu'est-ce que la neurofibromatose, causes, symptômes et diagnostic etc.</p>
             </a>
 
             <a className="pi-link-card" href="https://www.gerneurofibromatosis.ch/la-rubrique-scientifique-4-la-douleur-chez-les-patients-nf1/" target="_blank" rel="noopener noreferrer">
@@ -317,6 +354,9 @@ export default function PlusInfos() {
               allowFullScreen
             />
           </div>
+        </div>
+        <br /><br />
+        <div className="pi-videos__grid">
           <div className="pi-video-card">
             <iframe
               src="https://www.youtube.com/embed/RlNOUx9o8Lo"
@@ -334,8 +374,6 @@ export default function PlusInfos() {
             />
           </div>
         </div>
-
-
       </section>
 
       {/* ========================= QUELQUES LECTURES ========================= */}
@@ -424,10 +462,10 @@ export default function PlusInfos() {
           <a className="pi-book-card" href="https://arenes.fr/livre/je-suis-moi-et-personne-dautre/" target="_blank" rel="noopener noreferrer">
             <img src="/assets/je_suis_moi.jpg" className="pi-book-card__cover" alt="Couverture Je suis moi et personne d'autre" />
             <div className="pi-book-card__info">
-              <h3 className="pi-book-card__title">Je suis moi et personne d’autre</h3>
+              <h3 className="pi-book-card__title">Je suis moi et personne d'autre</h3>
               <p className="pi-book-card__author">Album jeunesse</p>
               <p className="pi-book-card__desc">
-                Un album qui célèbre l’unicité de chaque enfant et l’importance de s’accepter tel que l’on est.
+                Un album qui célèbre l'unicité de chaque enfant et l'importance de s'accepter tel que l'on est.
               </p>
             </div>
           </a>
@@ -438,12 +476,10 @@ export default function PlusInfos() {
               <h3 className="pi-book-card__title">Elmer</h3>
               <p className="pi-book-card__author">David McKee — École des Loisirs</p>
               <p className="pi-book-card__desc">
-                L’histoire d’Elmer, l’éléphant multicolore, qui apprend que la différence est une force.
+                L'histoire d'Elmer, l'éléphant multicolore, qui apprend que la différence est une force.
               </p>
             </div>
           </a>
-
-
         </div>
       </section>
 

@@ -71,13 +71,14 @@ export default function Home() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '20px'
+          padding: '20px',
+          
         }}>
           {/* Conteneur de la vidéo façon "Pop-up" */}
           <div style={{
             position: 'relative',
             width: '100%',
-            maxWidth: '800px',
+            maxWidth: '1200px',
             backgroundColor: '#000',
             borderRadius: '16px',
             overflow: 'hidden',
