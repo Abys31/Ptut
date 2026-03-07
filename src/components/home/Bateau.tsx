@@ -62,12 +62,10 @@ export default function Bateau() {
         <>
             <button
                 type="button"
-                className="obj obj--bateau objBtn"
+                className="home-hotspot home-hotspot--bateau"
                 onClick={open}
                 aria-label="Ouvrir la vidéo du bateau"
-            >
-                <img src="/assets/bateau_vf.png" alt="" />
-            </button>
+            />
 
             {show && (
                 <div className={`modal ${isClosing ? 'modal--closing' : ''}`} role="dialog" aria-modal="true" aria-label="Vidéo Bateau">

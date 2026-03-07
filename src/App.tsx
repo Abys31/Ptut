@@ -35,7 +35,7 @@ function GlobalHomeButton() {
       className="global-home-btn"
       onClick={() => navigate('/')}
       title="Retour"
-      aria-label="Retour à la page d'accueil"
+      aria-label="Retour à l'accueil"
     >
       🏠
     </button>

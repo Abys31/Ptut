@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import "./style.css"
 import Bateau from "./Bateau"
@@ -7,9 +7,7 @@ import PlusInfo from "./PlusInfo"
 import Boussole from "./Boussole"
 
 export default function Home() {
-  const sceneRef = useRef<HTMLElement | null>(null)
   const navigate = useNavigate()
-
   const [showTransition, setShowTransition] = useState(false)
 
   // Show transition video on captain click
@@ -17,48 +15,23 @@ export default function Home() {
     setShowTransition(true)
   }
 
-  // Parallax mouse tracking
-  useEffect(() => {
-    const scene = sceneRef.current
-    if (!scene) return
-    let raf = 0
-    let tx = 0, ty = 0
-    let cx = 0, cy = 0
-    const onMove = (e: PointerEvent) => {
-      const r = scene.getBoundingClientRect()
-      const px = (e.clientX - r.left) / r.width
-      const py = (e.clientY - r.top) / r.height
-      tx = (px - 0.5) * 2
-      ty = (py - 0.5) * 2
-      if (!raf) raf = requestAnimationFrame(tick)
-    }
-    const tick = () => {
-      raf = 0
-      cx += (tx - cx) * 0.08
-      cy += (ty - cy) * 0.08
-      scene.style.setProperty("--mx", cx.toFixed(4))
-      scene.style.setProperty("--my", cy.toFixed(4))
-    }
-    window.addEventListener("pointermove", onMove, { passive: true })
-    return () => {
-      window.removeEventListener("pointermove", onMove)
-      if (raf) cancelAnimationFrame(raf)
-    }
-  }, [])
-
   return (
-    <main ref={sceneRef} className="scene scene--fx" aria-label="Page d'accueil CAPITNF1">
-      <img src="/assets/fond_vf.jpg" className="layer bg bg--fx" alt="" />
-      <div className="fx fx--sky" aria-hidden="true" />
-      <div className="fx fx--water" aria-hidden="true" />
-      <div className="fx fx--sparkles" aria-hidden="true" />
-      <img src="/assets/title.PNG" className="layer overlay overlay--title" alt="CAPITNF1" />
-      <Bateau />
-      <Capitaine onClick={handleCaptainClick} />
-      <PlusInfo />
-      <Boussole onClick={() => navigate("/boussole")} />
-      <img src="/assets/bon_balaine.png" className="obj obj--balaine" alt="" />
-      <Link to="/iceberg" className="hotspot hotspot--iceberg" aria-label="Explorer l'iceberg" />
+    <main className="home-page">
+      {/* ── Fond flouté pour le remplissage ── */}
+      <div className="home-bg-blur" style={{ backgroundImage: 'url("/assets/1.jpg")' }}></div>
+
+      <div className="home-scene-wrapper">
+        {/* ── Image de fond principale ── */}
+        <img src="/assets/1.jpg" className="home-main-bg" alt="Capitaine NF1" draggable={false} />
+
+        {/* ── Zones Cliquables (Hotspots) ── */}
+        <Bateau />
+        <Capitaine onClick={handleCaptainClick} />
+        <PlusInfo />
+        <Boussole onClick={() => navigate("/boussole")} />
+
+        <Link to="/iceberg" className="home-hotspot home-hotspot--iceberg" aria-label="Explorer l'iceberg" />
+      </div>
 
       {/* Vidéo de transition vers /questions (en mode Pop-up) */}
       {showTransition && (
@@ -66,43 +39,47 @@ export default function Home() {
           position: 'fixed',
           inset: 0,
           zIndex: 999999,
-          background: 'rgba(0, 0, 0, 0.75)',
-          backdropFilter: 'blur(4px)',
+          background: 'rgba(0, 0, 0, 0.4)',
+          backdropFilter: 'blur(12px)', // Plus de flou sur le tour
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '20px'
+          padding: '40px'
         }}>
-          {/* Conteneur de la vidéo façon "Pop-up" */}
+          {/* Conteneur de la vidéo façon "Pop-up" sans bords noirs */}
           <div style={{
             position: 'relative',
             width: '100%',
-            maxWidth: '1050px', // Agrandi de 800px à 1200px
-            backgroundColor: '#000',
-            borderRadius: '16px',
+            maxWidth: '1050px',
+            backgroundColor: 'transparent', // Pas de fond noir
+            borderRadius: '24px',
             overflow: 'hidden',
-            boxShadow: '0 10px 40px rgba(0,0,0,0.5)',
+            boxShadow: '0 0 60px rgba(0, 160, 255, 0.3), 0 20px 80px rgba(0, 0, 0, 0.6)',
             aspectRatio: '16/9'
           }}>
             <button
               onClick={() => setShowTransition(false)}
               style={{
                 position: 'absolute',
-                top: 10,
-                right: 15,
+                top: 20,
+                right: 20,
                 zIndex: 10,
-                background: 'rgba(0,0,0,0.5)',
+                background: 'rgba(255, 255, 255, 0.2)',
+                backdropFilter: 'blur(10px)',
                 color: 'white',
-                border: 'none',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
                 borderRadius: '50%',
-                width: '36px',
-                height: '36px',
-                fontSize: '20px',
+                width: '44px',
+                height: '44px',
+                fontSize: '24px',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                transition: 'background 0.2s'
               }}
+              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.4)'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)'}
             >✕</button>
 
             <video
@@ -112,10 +89,9 @@ export default function Home() {
               onEnded={() => navigate("/questions")}
               onError={(e) => {
                 console.error("Video error:", e);
-                // Si la vidéo échoue à se lancer, on passe directement à la page suivante
                 navigate("/questions");
               }}
-              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }} // Cover pour éviter les bandes noires
             />
           </div>
         </div>

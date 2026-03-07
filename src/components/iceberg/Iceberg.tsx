@@ -100,11 +100,7 @@ export default function Iceberg() {
                 {items.map(item => (
                     <button
                         key={item.id}
-                        className={`ice-hotspot ice-hotspot--${item.type} ${item.type === 'bubble' ? `ice-hotspot--${item.size}` : ''}`}
-                        style={{
-                            left: `${item.xPct}%`,
-                            top: `${item.yPct}%`,
-                        }}
+                        className={`ice-hotspot ice-hotspot--${item.type} ice-hotspot--${item.id} ${item.type === 'bubble' ? `ice-hotspot--${item.size}` : ''}`}
                         onClick={() => setActive(item)}
                         aria-label={item.label}
                     />

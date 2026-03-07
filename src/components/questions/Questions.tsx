@@ -51,11 +51,11 @@ export default function Questions() {
     return (
         <div className="quest-page">
             {/* ── Fond flouté pour le remplissage ── */}
-            <div className="quest-bg-blur" style={{ backgroundImage: 'url("/assets/question_vv.jpg")' }}></div>
+            <div className="quest-bg-blur" style={{ backgroundImage: 'url("/assets/2.jpg")' }}></div>
 
             <div className="quest-scene-wrapper">
                 {/* ── Image de fond principale ── */}
-                <img src="/assets/question_vv.jpg" className="quest-main-bg" alt="" draggable={false} />
+                <img src="/assets/2.jpg" className="quest-main-bg" alt="" draggable={false} />
 
                 {/* ── Capitaine assis sur son petit iceberg (centre) ── */}
                 {/* Note : Le capitaine est déjà intégré dans l'image question_vv.jpg, 

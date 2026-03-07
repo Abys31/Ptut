@@ -65,40 +65,85 @@
     outline: none;
 }
 
-/* Forme pour les pancartes (rectangulaire) */
+/* Forme pour les pancartes (rond aussi désormais) */
 .ice-hotspot--sign {
-    width: 7vw;
-    height: 5vw;
-    /* Pour debug : background: rgba(255, 0, 0, 0.2); */
+    width: 6vw;
+    height: 6vw;
+    border-radius: 50%;
 }
 
 /* Forme pour les bulles (ronde) */
 .ice-hotspot--bubble {
     border-radius: 50%;
-    /* Contour bleu discret au survol */
-    border: 2px solid transparent;
 }
 
-.ice-hotspot--bubble:hover {
-    border-color: rgba(0, 150, 255, 0.6);
-    background: rgba(0, 150, 255, 0.1);
-    box-shadow: 0 0 15px rgba(0, 150, 255, 0.3);
-    transform: translate(-50%, -50%) scale(1.1);
-}
-
-.ice-hotspot--bubble.ice-hotspot--sm {
+.ice-hotspot--sm {
     width: 4vw;
     height: 4vw;
 }
 
-.ice-hotspot--bubble.ice-hotspot--md {
+.ice-hotspot--md {
     width: 7vw;
     height: 7vw;
 }
 
-.ice-hotspot--sign:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translate(-50%, -50%) scale(1.05);
+/* ══════════════════════════════════════════════════════
+   POSITIONS DES PANCARTES (Haut)
+   ══════════════════════════════════════════════════════ */
+.ice-hotspot--scoliose {
+    left: 59%;
+    top: 20%;
+}
+
+.ice-hotspot--scoliose-1 {
+    left: 66%;
+    top: 32%;
+}
+
+.ice-hotspot--taches-haut-g {
+    left: 40%;
+    top: 10%;
+}
+
+.ice-hotspot--taches-centre {
+    left: 50%;
+    top: 10%;
+}
+
+/* ══════════════════════════════════════════════════════
+   POSITIONS DES BULLES (Bas)
+   ══════════════════════════════════════════════════════ */
+.ice-hotspot--b3 {
+    left: 41%;
+    top: 58%;
+}
+
+.ice-hotspot--b5 {
+    left: 48%;
+    top: 65%;
+}
+
+.ice-hotspot--b4 {
+    left: 58%;
+    top: 60%;
+}
+
+.ice-hotspot--b6 {
+    left: 34%;
+    top: 75%;
+}
+
+.ice-hotspot--b8 {
+    left: 60%;
+    top: 78%;
+}
+
+.ice-hotspot--sign:hover,
+.ice-hotspot--bubble:hover {
+    border-color: rgba(0, 150, 255, 0.8);
+    background: rgba(0, 150, 255, 0.15);
+    box-shadow: 0 0 20px rgba(0, 150, 255, 0.4);
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* ══════════════════════════════════════════════════════
