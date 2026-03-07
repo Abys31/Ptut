@@ -145,8 +145,9 @@
 
 .pos-question {
     position: absolute;
-    left: 91%;
-    top: 15%;
+    left: 88%;
+    /* Reculé vers la droite (de 85% à 88%) */
+    top: 22%;
     z-index: 50;
 }
 
@@ -174,10 +175,10 @@
 /* ── Zone cliquable (invisible, ajuste sur les bulles dessinées) ── */
 .quest-bubble {
     position: relative;
-    width: 9.5vw;
-    height: 9.5vw;
-    max-width: 140px;
-    max-height: 140px;
+    width: 12vw;
+    height: 12vw;
+    max-width: 180px;
+    max-height: 180px;
     border-radius: 50%;
     background: transparent;
     border: none;
@@ -228,17 +229,41 @@
 
 /* ── Grosse bulle "?" ── */
 .quest-bubble--big {
-    width: 7vw;
-    height: 7vw;
-    min-width: 55px;
-    min-height: 55px;
+    width: 8vw;
+    /* Reduced from 10vw */
+    height: 8vw;
+    /* Reduced from 10vw */
+    min-width: 60px;
+    min-height: 60px;
     max-width: 120px;
+    /* Reduced from 150px */
     max-height: 120px;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    backdrop-filter: none;
+    /* Reduced from 150px */
+    /* Dégradé bleu clair brillant (glossy) */
+    background: radial-gradient(circle at 30% 30%, #add8e6 0%, #87ceeb 40%, #4682b4 100%);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.1),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     animation: questFloat 4s ease-in-out infinite alternate;
+}
+
+/* Le reflet blanc sur la bulle */
+.quest-bubble--big::after {
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 30%;
+    height: 30%;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    filter: blur(5px);
 }
 
 @keyframes questFloat {
@@ -252,11 +277,26 @@
 }
 
 .quest-question-mark {
-    font-size: 50px;
+    font-size: clamp(40px, 6vw, 90px);
+    /* Réduit de clamp(60px, 10vw, 130px) */
     font-weight: 900;
     color: white;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
     z-index: 1;
+    margin-top: -5px;
+}
+
+/* Le texte "Une Question ?" sous la bulle */
+.quest-bubble-label {
+    margin-top: 10px;
+    font-size: clamp(14px, 1.8vw, 24px);
+    font-weight: 800;
+    color: #1a3a5a;
+    text-align: center;
+    font-family: 'Comic Sans MS', 'Inter', cursive, sans-serif;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+    white-space: nowrap;
+    /* Empêche le texte de se couper en deux */
 }
 
 .quest-question-text {

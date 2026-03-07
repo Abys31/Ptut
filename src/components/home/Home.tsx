@@ -44,43 +44,19 @@ export default function Home() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '40px'
+          padding: '20px' // Réduit pour donner plus de place sur petits écrans
         }}>
-          {/* Conteneur de la vidéo façon "Pop-up" sans bords noirs */}
+          {/* Conteneur de la vidéo façon "Pop-up" sans bords noirs - PLUS GRAND */}
           <div style={{
             position: 'relative',
-            width: '100%',
-            maxWidth: '1050px',
+            width: '88%', // Un peu plus petit pour mieux rentrer dans le cadre
+            maxWidth: '1200px', // Un peu plus petit pour mieux rentrer dans le cadre
             backgroundColor: 'transparent', // Pas de fond noir
             borderRadius: '24px',
             overflow: 'hidden',
             boxShadow: '0 0 60px rgba(0, 160, 255, 0.3), 0 20px 80px rgba(0, 0, 0, 0.6)',
             aspectRatio: '16/9'
           }}>
-            <button
-              onClick={() => setShowTransition(false)}
-              style={{
-                position: 'absolute',
-                top: 20,
-                right: 20,
-                zIndex: 10,
-                background: 'rgba(255, 255, 255, 0.2)',
-                backdropFilter: 'blur(10px)',
-                color: 'white',
-                border: '1px solid rgba(255, 255, 255, 0.3)',
-                borderRadius: '50%',
-                width: '44px',
-                height: '44px',
-                fontSize: '24px',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                transition: 'background 0.2s'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.4)'}
-              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)'}
-            >✕</button>
 
             <video
               src="/assets/transition.mp4"

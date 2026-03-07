@@ -34,22 +34,25 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    /* Garder l'eau en bas */
-    width: 100vw;
-    height: 30vw;
-    /* Ratio 16:9 parfait */
-    min-height: 420px;
-    overflow: hidden;
+    justify-content: center;
+    padding: 30px 20px 20px;
+    text-align: center;
 }
 
 .bg-hero__banner {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    /* Un peu plus large pour remplir l'espace */
+    max-width: 850px;
+    height: auto;
     object-fit: cover;
-    z-index: 0;
+    /* Remplit mieux le cadre */
+    margin-bottom: 25px;
+    border-radius: 24px;
+    filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.15));
+    border: 8px solid white;
+    padding: 0;
+    /* Supprime le padding pour que l'image touche le bord blanc */
+    display: block;
 }
 
 .bg-hero__back {
@@ -77,60 +80,40 @@
     box-shadow: 0 8px 20px rgba(46, 95, 126, 0.18);
 }
 
-.bg-hero__banner {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    inset: 0;
-    object-fit: fill;
-    /* Forcé au ratio du container */
-    z-index: 0;
-}
 
-.bg-hero__overlay {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 80px 20px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-}
-
+/* Les overlays ne sont plus nécessaires avec le nouveau design */
+.bg-hero__overlay,
 .bg-hero__title {
-    max-width: 400px;
-    width: 60%;
-    object-fit: contain;
-    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.2));
+    display: none;
 }
 
 /* =========================
    Scroll Indicator
 ========================= */
-.scroll-indicator {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+/* =========================
+   Scroll Arrows & Hint
+========================= */
+.bg-scroll-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: -10px;
-    z-index: 5;
-    opacity: 0.8;
+    gap: 10px;
+    margin-bottom: 30px;
 }
 
-.scroll-indicator span {
-    color: white;
-    font-size: 24px;
-    line-height: 0.8;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+.bg-scroll-arrows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: -8px;
     animation: scrollBounce 2s infinite;
 }
 
-.scroll-indicator span:nth-child(2) {
-    animation-delay: 0.2s;
+.bg-scroll-arrows span {
+    color: #2e5f7e;
+    font-size: 20px;
+    line-height: 0.7;
+    font-weight: bold;
 }
 
 @keyframes scrollBounce {
@@ -153,19 +136,15 @@
 }
 
 .bg-hero__hint {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
     color: #0d3a5c;
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(6px);
-    padding: 14px 30px;
+    padding: 12px 24px;
     border-radius: 50px;
-    box-shadow: 0 4px 14px rgba(0, 40, 80, 0.15);
-    margin: 0 auto;
+    box-shadow: 0 4px 14px rgba(0, 40, 80, 0.1);
     text-align: center;
-    display: block;
-    width: fit-content;
-    margin-top: 16px;
 }
 
 /* =========================
@@ -197,6 +176,7 @@
    Cards
 ========================= */
 .bg-card {
+    position: relative;
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(8px);
     border-radius: 24px;
@@ -305,27 +285,37 @@
 }
 
 /* =========================
-   Speaker Icon Button
-========================= */
+   Speaker Icon Button (Corner)
+   ========================= */
 .bg-speaker {
-    display: inline-flex;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 52px;
+    height: 52px;
     border: none;
     border-radius: 50%;
-    background: rgba(46, 95, 126, 0.12);
+    background: rgba(46, 95, 126, 0.1);
+    backdrop-filter: blur(4px);
     cursor: pointer;
-    font-size: 18px;
-    margin-left: 8px;
-    vertical-align: middle;
-    transition: background 0.2s, transform 0.15s;
+    font-size: 24px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 5;
+    color: #2e5f7e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .bg-speaker:hover {
-    background: rgba(46, 95, 126, 0.25);
-    transform: scale(1.15);
+    background: rgba(46, 95, 126, 0.2);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 15px rgba(46, 95, 126, 0.2);
+}
+
+.bg-speaker:active {
+    transform: scale(0.95);
 }
 
 /* =========================

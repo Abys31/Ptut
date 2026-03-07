@@ -82,6 +82,7 @@ export default function Questions() {
                     <div className="quest-bubble quest-bubble--big">
                         <span className="quest-question-mark">?</span>
                     </div>
+                    <div className="quest-bubble-label">Une Question ?</div>
                 </button>
             </div>
 

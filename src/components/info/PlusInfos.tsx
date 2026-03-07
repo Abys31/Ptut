@@ -8,6 +8,13 @@ export default function PlusInfos() {
         <img src="/assets/ice_b.png" className="pi-hero__banner" alt="CapitNF1 — Plus d'Info" />
       </header>
 
+      <div className="pi-scroll-container">
+        <div className="pi-scroll-arrows">
+          <span>▼</span>
+          <span>▼</span>
+        </div>
+      </div>
+
       {/* ========================= LE PROJET ========================= */}
       <section className="pi-section pi-projet">
         <div className="pi-card">
@@ -185,118 +192,6 @@ export default function PlusInfos() {
         </div>
       </section>
 
-      {/* ========================= AUTRES RESSOURCES ========================= */}
-      <section className="pi-section pi-resources">
-        <h2>Autres ressources</h2>
-        <div className="pi-card pi-resources__centres">
-          <p>
-            Le CERENEF-Ped travaille en synergie nationale avec les 3 autres centres de référence maladies
-            rares NF1 français et votre enfant est peut-être suivi dans l'un d'entre eux. Nous travaillons
-            en tous les cas de concert :
-          </p>
-          <ul className="pi-resources__list">
-            <li><a href="https://cerenef.org/" target="_blank" rel="noopener noreferrer">Centre de référence maladies rares constitutif CERENEF de Paris (AP-HP, Hôpital de la Pitié-Salpêtrière)</a></li>
-            <li><a href="https://www.chu-nantes.fr/la-nf1-1" target="_blank" rel="noopener noreferrer">Centre de référence maladies rares NF1 de l'enfant de Nantes</a></li>
-            <li><a href="https://www.chu-toulouse.fr/neurofibromatose-de-type-1-nf1" target="_blank" rel="noopener noreferrer">Centre de référence maladies rares NF1 de l'enfant de Toulouse</a></li>
-            <li><a href="https://www.chu-lyon.fr/service-neurologie-oncologie" target="_blank" rel="noopener noreferrer">Centre de référence maladies rares NF1 de l'enfant de Lyon</a></li>
-          </ul>
-          <p style={{ marginTop: '16px' }}>
-            Le CERENEF-Ped fait partie de la <a href="https://fimarad.org/" target="_blank" rel="noopener noreferrer"><strong>Filière santé maladies rares dermatologiques (Fimarad)</strong></a> qui
-            comprend plusieurs centres de référence et de compétence de plusieurs maladies rares dermatologiques.
-          </p>
-        </div>
-
-        <div className="pi-resources__links">
-          <h3>Ressources en ligne</h3>
-          <div className="pi-link-grid">
-            <a className="pi-link-card" href="https://www.gerneurofibromatosis.ch/brochure-dave-le-brave/" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">Brochure « Dave le Brave »</div>
-              <p className="pi-link-card__desc">Ce livre a été écrit pour les enfants sur la NF1. Il a pour but d'aider à mieux comprendre la NF1.</p>
-            </a>
-
-            <a className="pi-link-card" href="https://www.gerneurofibromatosis.ch/difficultes-d-apprentissage-chez-les-eleves-atteints-de-nf1/" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">Difficultés d'apprentissage chez les élèves atteints de NF1</div>
-              <p className="pi-link-card__desc">Brochure concernant les difficultés d'apprentissage observées chez les élèves atteints de NF de type 1.</p>
-            </a>
-
-            <a className="pi-link-card" href="https://anfq.ca/wp-content/uploads/2023/11/guide-sur-la-nf-a-lintention-des-parents.pdf" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">Guide NF à l'intention des parents</div>
-              <p className="pi-link-card__desc">Source de soutien et d'information pour les familles touchées par la NF, avec des résultats d'études et de sondages.</p>
-            </a>
-
-            <a className="pi-link-card" href="https://anfq.ca/wp-content/uploads/2023/10/nf-guide-pour-educateur.pdf" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">Guide NF pour les éducateurs</div>
-              <p className="pi-link-card__desc">Guide pour aider les éducateurs à répondre aux besoins spéciaux des enfants atteints de NF1 en milieu scolaire.</p>
-            </a>
-
-            <a className="pi-link-card" href="https://www.anrfrance.fr/" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">ANR France</div>
-              <p className="pi-link-card__desc">Association Neurofibromatoses et Recklinghausen — informations, animations et contacts en France et Belgique.</p>
-            </a>
-
-            <a className="pi-link-card" href="http://www.anfq.org" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">Association de la neurofibromatose du Québec</div>
-              <p className="pi-link-card__desc">Association sans but lucratif qui aide les personnes atteintes de NF et leurs familles.</p>
-            </a>
-
-            <a className="pi-link-card" href="https://www.gerneurofibromatosis.ch/documentation/" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">GER-NF (Suisse)</div>
-              <p className="pi-link-card__desc">Groupement d'Entraide Romand pour les personnes atteintes de Neurofibromatose — documentation et témoignages.</p>
-            </a>
-
-            <a className="pi-link-card" href="https://www.chusj.org/fr/soins-services/N/Neurofibromatose" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">CHU Sainte-Justine — NF1</div>
-              <p className="pi-link-card__desc">La clinique NF1 offre une expertise et des soins spécialisés avec une attention particulière au développement de l'enfant.</p>
-            </a>
-
-            <a className="pi-link-card" href="https://enseignement.chusj.org/fr/bibliotheques/les-Ressources/Guide-Info-famille?NodeAlias=Neurofibromatose" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">Guide Info-famille — Neurofibromatose</div>
-              <p className="pi-link-card__desc">Guide du CHU Sainte-Justine destiné aux familles pour mieux comprendre la neurofibromatose et les ressources disponibles.</p>
-            </a>
-
-            <a className="pi-link-card" href="https://www.gerneurofibromatosis.ch/documentation/" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">GER-NF — Documentation complète</div>
-              <p className="pi-link-card__desc">Documentation et brochures du Groupement d'Entraide Romand pour les personnes atteintes de Neurofibromatose.</p>
-            </a>
-
-            <a className="pi-link-card" href="https://anfq.ca/wp-content/uploads/2023/11/guide-sur-la-nf-a-lintention-des-parents.pdf" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">Guide sur la NF à l’intention des parents</div>
-              <p className="pi-link-card__desc">ANFQ — Comment aider les enfants ayant des difficultés d’apprentissage associées à la neurofibromatose de type 1.</p>
-            </a>
-
-            <a className="pi-link-card" href="https://anfq.ca/" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">Association de la Neurofibromatose du Québec</div>
-              <p className="pi-link-card__desc">Mission d’améliorer la vie des gens touchés par la NF, favoriser la recherche et diffuser les connaissances.</p>
-            </a>
-
-            <a className="pi-link-card" href="https://cancer.ca/fr/cancer-information/resources/glossary/n/neurofibromatosis-type-1" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">Société canadienne du cancer — NF1</div>
-              <p className="pi-link-card__desc">Description de la maladie (de von Recklinghausen) et risques reliés au cancer.</p>
-            </a>
-
-            <a className="pi-link-card" href="https://www.aboutkidshealth.ca/fr/santeaz/genetics/neurofibromatosis-type-1-nf1/?language=fr" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">AboutKidsHealth — NF1</div>
-              <p className="pi-link-card__desc">Apprenez-en davantage sur les anomalies qui sont associées à cette affection.</p>
-            </a>
-
-            <a className="pi-link-card" href="https://anfq.ca/wp-content/uploads/2023/10/nf-guide-pour-educateur.pdf" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">NF1 Guide à l'intention des éducateurs</div>
-              <p className="pi-link-card__desc">Pour mieux comprendre les besoins spéciaux des enfants atteints de NF1 en milieu scolaire.</p>
-            </a>
-
-            <a className="pi-link-card" href="https://www.chumontreal.qc.ca/patients/centre-dexpertise-en-neurofibromatose/je-suis-patient/tout-savoir-neurofibromatose" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">CHUM — Tout savoir sur la neurofibromatose</div>
-              <p className="pi-link-card__desc">Qu’est-ce que la neurofibromatose, causes, symptômes et diagnostic etc.</p>
-            </a>
-
-            <a className="pi-link-card" href="https://www.gerneurofibromatosis.ch/la-rubrique-scientifique-4-la-douleur-chez-les-patients-nf1/" target="_blank" rel="noopener noreferrer">
-              <div className="pi-link-card__title">GER-NF — La douleur chez les patients NF1</div>
-              <p className="pi-link-card__desc">Rubrique scientifique sur la douleur chez les patients NF1.</p>
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* ========================= QUELQUES VIDÉOS ========================= */}
       <section className="pi-section pi-videos">
         <h2>Quelques vidéos</h2>
@@ -444,6 +339,118 @@ export default function PlusInfos() {
           </a>
 
 
+        </div>
+      </section>
+
+      {/* ========================= AUTRES RESSOURCES ========================= */}
+      <section className="pi-section pi-resources">
+        <h2>Autres ressources</h2>
+        <div className="pi-card pi-resources__centres">
+          <p>
+            Le CERENEF-Ped travaille en synergie nationale avec les 3 autres centres de référence maladies
+            rares NF1 français et votre enfant est peut-être suivi dans l'un d'entre eux. Nous travaillons
+            en tous les cas de concert :
+          </p>
+          <ul className="pi-resources__list">
+            <li><a href="https://cerenef.org/" target="_blank" rel="noopener noreferrer">Centre de référence maladies rares constitutif CERENEF de Paris (AP-HP, Hôpital de la Pitié-Salpêtrière)</a></li>
+            <li><a href="https://www.chu-nantes.fr/la-nf1-1" target="_blank" rel="noopener noreferrer">Centre de référence maladies rares NF1 de l'enfant de Nantes</a></li>
+            <li><a href="https://www.chu-toulouse.fr/neurofibromatose-de-type-1-nf1" target="_blank" rel="noopener noreferrer">Centre de référence maladies rares NF1 de l'enfant de Toulouse</a></li>
+            <li><a href="https://www.chu-lyon.fr/service-neurologie-oncologie" target="_blank" rel="noopener noreferrer">Centre de référence maladies rares NF1 de l'enfant de Lyon</a></li>
+          </ul>
+          <p style={{ marginTop: '16px' }}>
+            Le CERENEF-Ped fait partie de la <a href="https://fimarad.org/" target="_blank" rel="noopener noreferrer"><strong>Filière santé maladies rares dermatologiques (Fimarad)</strong></a> qui
+            comprend plusieurs centres de référence et de compétence de several maladies rares dermatologiques.
+          </p>
+        </div>
+
+        <div className="pi-resources__links">
+          <h3>Ressources en ligne</h3>
+          <div className="pi-link-grid">
+            <a className="pi-link-card" href="https://www.gerneurofibromatosis.ch/brochure-dave-le-brave/" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">Brochure « Dave le Brave »</div>
+              <p className="pi-link-card__desc">Ce livre a été écrit pour les enfants sur la NF1. Il a pour but d'aider à mieux comprendre la NF1.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://www.gerneurofibromatosis.ch/difficultes-d-apprentissage-chez-les-eleves-atteints-de-nf1/" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">Difficultés d'apprentissage chez les élèves atteints de NF1</div>
+              <p className="pi-link-card__desc">Brochure concernant les difficultés d'apprentissage observées chez les élèves atteints de NF de type 1.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://anfq.ca/wp-content/uploads/2023/11/guide-sur-la-nf-a-lintention-des-parents.pdf" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">Guide NF à l'intention des parents</div>
+              <p className="pi-link-card__desc">Source de soutien et d'information pour les familles touchées par la NF, avec des résultats d'études et de sondages.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://anfq.ca/wp-content/uploads/2023/10/nf-guide-pour-educateur.pdf" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">Guide NF pour les éducateurs</div>
+              <p className="pi-link-card__desc">Guide pour aider les éducateurs à répondre aux besoins spéciaux des enfants atteints de NF1 en milieu scolaire.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://www.anrfrance.fr/" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">ANR France</div>
+              <p className="pi-link-card__desc">Association Neurofibromatoses et Recklinghausen — informations, animations et contacts en France et Belgique.</p>
+            </a>
+
+            <a className="pi-link-card" href="http://www.anfq.org" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">Association de la neurofibromatose du Québec</div>
+              <p className="pi-link-card__desc">Association sans but lucratif qui aide les personnes atteintes de NF et leurs familles.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://www.gerneurofibromatosis.ch/documentation/" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">GER-NF (Suisse)</div>
+              <p className="pi-link-card__desc">Groupement d'Entraide Romand pour les personnes atteintes de Neurofibromatose — documentation et témoignages.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://www.chusj.org/fr/soins-services/N/Neurofibromatose" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">CHU Sainte-Justine — NF1</div>
+              <p className="pi-link-card__desc">La clinique NF1 offre une expertise et des soins spécialisés avec une attention particulière au développement de l'enfant.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://enseignement.chusj.org/fr/bibliotheques/les-Ressources/Guide-Info-famille?NodeAlias=Neurofibromatose" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">Guide Info-famille — Neurofibromatose</div>
+              <p className="pi-link-card__desc">Guide du CHU Sainte-Justine destiné aux familles pour mieux comprendre la neurofibromatose et les ressources disponibles.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://www.gerneurofibromatosis.ch/documentation/" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">GER-NF — Documentation complète</div>
+              <p className="pi-link-card__desc">Documentation et brochures du Groupement d'Entraide Romand pour les personnes atteintes de Neurofibromatose.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://anfq.ca/wp-content/uploads/2023/11/guide-sur-la-nf-a-lintention-des-parents.pdf" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">Guide sur la NF à l’intention des parents</div>
+              <p className="pi-link-card__desc">ANFQ — Comment aider les enfants ayant des difficultés d’apprentissage associées à la neurofibromatose de type 1.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://anfq.ca/" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">Association de la Neurofibromatose du Québec</div>
+              <p className="pi-link-card__desc">Mission d’améliorer la vie des gens touchés par la NF, favoriser la recherche et diffuser les connaissances.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://cancer.ca/fr/cancer-information/resources/glossary/n/neurofibromatosis-type-1" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">Société canadienne du cancer — NF1</div>
+              <p className="pi-link-card__desc">Description de la maladie (de von Recklinghausen) et risques reliés au cancer.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://www.aboutkidshealth.ca/fr/santeaz/genetics/neurofibromatosis-type-1-nf1/?language=fr" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">AboutKidsHealth — NF1</div>
+              <p className="pi-link-card__desc">Apprenez-en davantage sur les anomalies qui sont associées à cette affection.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://anfq.ca/wp-content/uploads/2023/10/nf-guide-pour-educateur.pdf" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">NF1 Guide à l'intention des éducateurs</div>
+              <p className="pi-link-card__desc">Pour mieux comprendre les besoins spéciaux des enfants atteints de NF1 en milieu scolaire.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://www.chumontreal.qc.ca/patients/centre-dexpertise-en-neurofibromatose/je-suis-patient/tout-savoir-neurofibromatose" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">CHUM — Tout savoir sur la neurofibromatose</div>
+              <p className="pi-link-card__desc">Qu’est-ce que la neurofibromatose, causes, symptômes et diagnostic etc.</p>
+            </a>
+
+            <a className="pi-link-card" href="https://www.gerneurofibromatosis.ch/la-rubrique-scientifique-4-la-douleur-chez-les-patients-nf1/" target="_blank" rel="noopener noreferrer">
+              <div className="pi-link-card__title">GER-NF — La douleur chez les patients NF1</div>
+              <p className="pi-link-card__desc">Rubrique scientifique sur la douleur chez les patients NF1.</p>
+            </a>
+          </div>
         </div>
       </section>
 

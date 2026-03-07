@@ -75,39 +75,84 @@
 /* Forme pour les bulles (ronde) */
 .ice-hotspot--bubble {
     border-radius: 50%;
+    background: rgba(0, 180, 255, 0.25);
+    /* Plus lumineux par défaut */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 20px rgba(0, 180, 255, 0.4);
+    /* Lueur plus présente */
+    animation: iceBubbleFloat 3s ease-in-out infinite alternate;
+}
+
+.ice-hotspot--bubble:hover {
+    background: rgba(0, 200, 255, 0.4);
+    box-shadow: 0 0 45px rgba(55, 0, 255, 0.8);
+    /* Très lumineux au survol */
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+@keyframes iceBubbleFloat {
+    from {
+        transform: translate(-50%, -48%);
+    }
+
+    to {
+        transform: translate(-50%, -52%);
+    }
 }
 
 .ice-hotspot--sm {
-    width: 4vw;
-    height: 4vw;
+    width: 3.2vw;
+    /* Plus petit (4vw -> 3.2vw) */
+    height: 3.2vw;
 }
 
 .ice-hotspot--md {
-    width: 7vw;
-    height: 7vw;
+    width: 6vw;
+    /* Plus petit (7vw -> 6vw) */
+    height: 6vw;
 }
 
 /* ══════════════════════════════════════════════════════
    POSITIONS DES PANCARTES (Haut)
    ══════════════════════════════════════════════════════ */
-.ice-hotspot--scoliose {
-    left: 59%;
-    top: 20%;
-}
-
-.ice-hotspot--scoliose-1 {
-    left: 66%;
-    top: 32%;
+.ice-hotspot--taches-gauche {
+    left: 31%;
+    top: 35.5%;
 }
 
 .ice-hotspot--taches-haut-g {
-    left: 40%;
+    left: 39%;
+    top: 13%;
+}
+
+.ice-hotspot--neurofibromes-haut {
+    left: 50.8%;
     top: 10%;
 }
 
 .ice-hotspot--taches-centre {
-    left: 50%;
-    top: 10%;
+    left: 46%;
+    top: 24%;
+}
+
+.ice-hotspot--scoliose-haut {
+    left: 59%;
+    top: 21%;
+}
+
+.ice-hotspot--taches-bas-d {
+    left: 65.5%;
+    top: 35%;
+}
+
+.ice-hotspot--scoliose-droite-1 {
+    left: 90%;
+    top: 31.5%;
+}
+
+.ice-hotspot--scoliose-droite-2 {
+    left: 82%;
+    top: 31%;
 }
 
 /* ══════════════════════════════════════════════════════
@@ -138,12 +183,34 @@
     top: 78%;
 }
 
-.ice-hotspot--sign:hover,
-.ice-hotspot--bubble:hover {
-    border-color: rgba(0, 150, 255, 0.8);
-    background: rgba(0, 150, 255, 0.15);
-    box-shadow: 0 0 20px rgba(0, 150, 255, 0.4);
+.ice-hotspot--sign::after {
+    content: '';
+    position: absolute;
+    inset: -100%;
+    background: radial-gradient(circle, rgba(30, 80, 180, 0.5) 0%, rgba(30, 80, 180, 0) 70%);
+    filter: blur(25px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+.ice-hotspot--sign:hover::after {
+    opacity: 1;
+}
+
+.ice-hotspot--sign:hover {
+    border: none;
+    background: transparent;
     transform: translate(-50%, -50%) scale(1.1);
+}
+
+.ice-hotspot--bubble:hover {
+    border-color: transparent;
+    background: rgba(200, 240, 255, 0.4);
+    /* On garde le clair */
+    box-shadow: 0 0 45px rgba(200, 245, 255, 0.8);
+    transform: translate(-50%, -50%) scale(1.15);
 }
 
 /* ══════════════════════════════════════════════════════

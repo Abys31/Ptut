@@ -5,22 +5,23 @@ export default function BoussoleGuide() {
         <div className="bguide">
             {/* ========================= HERO ========================= */}
             <header className="bg-hero">
-                <img src="/assets/fond_bousolle.jpg" className="bg-hero__banner" alt="CapitNF1 — Guide" />
-                <div className="bg-hero__overlay">
-                    {/* Le titre est déjà intégré dans l'image de fond (fond_bousolle.jpg) */}
-                </div>
-                <div className="scroll-indicator" aria-hidden="true">
-                    <span>▼</span>
-                    <span>▼</span>
-                </div>
+                <img src="/assets/fond_bousolle.jpg" className="bg-hero__banner" alt="CapitNF1 — Boussole" />
             </header>
-            <p className="bg-hero__hint">🌊 Découvre comment naviguer sur le site ! 🧭</p>
+
+            <div className="bg-scroll-container">
+                <div className="bg-scroll-arrows">
+                    <span>▼</span>
+                    <span>▼</span>
+                </div>
+                <p className="bg-hero__hint">🌊 Découvre comment naviguer sur le site ! 🧭</p>
+            </div>
 
             {/* ========================= LA BOUSSOLE ========================= */}
             <section className="bg-section">
                 <div className="bg-card bg-card--with-icon">
+                    <button className="bg-speaker" title="Écouter le texte">🔊</button>
                     <img src="/assets/boussole new.png" className="bg-card__icon" alt="" />
-                    <h2>🧭 La Boussole <button className="bg-speaker" title="Écouter le texte">🔊</button></h2>
+                    <h2>🧭 La Boussole</h2>
                     <p>Coucou petit explorateur 🌟</p>
                     <p>Moi, je suis la boussole.</p>
                     <p>Je t'aide à comprendre comment utiliser ce site.</p>
@@ -33,8 +34,9 @@ export default function BoussoleGuide() {
             {/* ========================= LE CAPITAINE ========================= */}
             <section className="bg-section bg-section--alt">
                 <div className="bg-card bg-card--with-icon">
+                    <button className="bg-speaker" title="Écouter le texte">🔊</button>
                     <img src="/assets/IMG_0399.PNG" className="bg-card__icon bg-card__icon--xlarge" alt="" />
-                    <h2>👨‍✈️ Le Capitaine <button className="bg-speaker" title="Écouter le texte">🔊</button></h2>
+                    <h2>👨‍✈️ Le Capitaine</h2>
                     <p>Bonjour ! Je suis CapitNF1 🧑‍✈️</p>
                     <p>Ici, je réponds à toutes les questions que se posent les enfants.</p>
                     <p>Si tu cliques sur une bulle, tu peux écouter la question d'un enfant et ma réponse.</p>
@@ -45,8 +47,9 @@ export default function BoussoleGuide() {
             {/* ========================= LE BATEAU ========================= */}
             <section className="bg-section">
                 <div className="bg-card bg-card--with-icon">
+                    <button className="bg-speaker" title="Écouter le texte">🔊</button>
                     <img src="/assets/bateau_vf.png" className="bg-card__icon bg-card__icon--xlarge" alt="" />
-                    <h2>⛵ Le Bateau <button className="bg-speaker" title="Écouter le texte">🔊</button></h2>
+                    <h2>⛵ Le Bateau</h2>
                     <p>La NF1 est une maladie qui restera avec toi toute ta vie. Cela veut dire qu'elle fait partie de ton voyage et que tu dois apprendre à vivre avec.</p>
                     <p>Ce bateau représente ton voyage à la découverte de ta maladie ⛵</p>
                     <p>Si tu cliques dessus, tu pourras regarder une vidéo de deux médecins qui t'expliquent pourquoi il est important que tu deviennes, comme moi, le capitaine de ton navire et de ta maladie.</p>
@@ -57,8 +60,9 @@ export default function BoussoleGuide() {
             {/* ========================= L'ICEBERG ========================= */}
             <section className="bg-section bg-section--alt">
                 <div className="bg-card bg-card--with-icon">
+                    <button className="bg-speaker" title="Écouter le texte">🔊</button>
                     <img src="/assets/IMG_0412.PNG" className="bg-card__icon bg-card__icon--xlarge" alt="" />
-                    <h2>🧊 L'Iceberg <button className="bg-speaker" title="Écouter le texte">🔊</button></h2>
+                    <h2>🧊 L'Iceberg</h2>
                     <p>Cet iceberg représente la NF1.</p>
                     <p>Dans la NF1, il y a des choses qui se voient et des choses qui ne se voient pas. C'est comme un iceberg : on voit seulement une petite partie au-dessus de l'eau, mais une grande partie est cachée sous l'eau.</p>
                     <p>Tous les symptômes de la NF1 sont placés sur cet iceberg et représentés par des pictogrammes.</p>
@@ -71,8 +75,9 @@ export default function BoussoleGuide() {
             {/* ========================= PLUS D'INFO ========================= */}
             <section className="bg-section">
                 <div className="bg-card bg-card--with-icon">
+                    <button className="bg-speaker" title="Écouter le texte">🔊</button>
                     <img src="/assets/info_vf.png" className="bg-card__icon bg-card__icon--large" alt="" />
-                    <h2>🪧 Plus d'info <button className="bg-speaker" title="Écouter le texte">🔊</button></h2>
+                    <h2>🪧 Plus d'info</h2>
                     <p>Tu veux en savoir encore plus ? 🪧</p>
                     <p>Ici, tu trouveras des informations sur toutes les personnes qui travaillent pour faire vivre CapitNF1.</p>
                     <p>Il y a aussi d'autres vidéos et plein de liens vers des livres et d'autres ressources pour en apprendre davantage sur la NF1.</p>

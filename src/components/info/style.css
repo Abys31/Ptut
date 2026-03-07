@@ -82,6 +82,52 @@
 }
 
 /* =========================
+   Scroll Indicator
+========================= */
+.pi-scroll-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.pi-scroll-arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: -8px;
+  animation: piScrollBounce 2s infinite;
+}
+
+.pi-scroll-arrows span {
+  color: #2e5f7e;
+  font-size: 20px;
+  line-height: 0.7;
+  font-weight: bold;
+}
+
+@keyframes piScrollBounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+
+/* =========================
    Section base
 ========================= */
 .pi-section {

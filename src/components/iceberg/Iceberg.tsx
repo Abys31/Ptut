@@ -33,28 +33,52 @@ const items: IceItem[] = [
 
     // ═══════ PANCARTES (Hauts) ════════════════════════════════════════════
     {
-        type: "sign", id: "scoliose", label: "scoliose",
-        xPct: 59, yPct: 20,
+        type: "sign", id: "taches-gauche", label: "taches",
+        xPct: 35, yPct: 35, // Approx, géré en CSS
         video: "/assets/4 Second Timer.mp4",
-        description: "<scoliose>."
-    },
-    {
-        type: "sign", id: "scoliose-1", label: "taches",
-        xPct: 62.5, yPct: 32,
-        video: "/assets/4 Second Timer.mp4",
-        description: "neurofibromes."
+        description: "Les taches café au lait."
     },
     {
         type: "sign", id: "taches-haut-g", label: "taches",
-        xPct: 30, yPct: 17,
+        xPct: 40, yPct: 15,
         video: "/assets/4 Second Timer.mp4",
         description: "Les taches café au lait."
     },
     {
+        type: "sign", id: "neurofibromes-haut", label: "neurofibromes",
+        xPct: 50, yPct: 10,
+        video: "/assets/4 Second Timer.mp4",
+        description: "Les neurofibromes."
+    },
+    {
         type: "sign", id: "taches-centre", label: "taches",
-        xPct: 48, yPct: 27,
+        xPct: 48, yPct: 25,
         video: "/assets/4 Second Timer.mp4",
         description: "Les taches café au lait."
+    },
+    {
+        type: "sign", id: "scoliose-haut", label: "scoliose",
+        xPct: 57, yPct: 22,
+        video: "/assets/4 Second Timer.mp4",
+        description: "La scoliose."
+    },
+    {
+        type: "sign", id: "taches-bas-d", label: "taches",
+        xPct: 62, yPct: 35,
+        video: "/assets/4 Second Timer.mp4",
+        description: "Les taches café au lait."
+    },
+    {
+        type: "sign", id: "scoliose-droite-1", label: "scoliose",
+        xPct: 75, yPct: 30,
+        video: "/assets/4 Second Timer.mp4",
+        description: "La scoliose."
+    },
+    {
+        type: "sign", id: "scoliose-droite-2", label: "scoliose",
+        xPct: 82, yPct: 32,
+        video: "/assets/4 Second Timer.mp4",
+        description: "La scoliose."
     },
 
     // ═══════ BULLES (Sous l'eau) ═════════════════════════════════════════
