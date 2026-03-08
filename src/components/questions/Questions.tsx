@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import "./style.css"
 
 /* ── Données des personnages (bulles) ── */
@@ -17,10 +17,32 @@ export default function Questions() {
     const [questionText, setQuestionText] = useState("")
     const [submitted, setSubmitted] = useState(false)
 
-    /* Plus tard : chaque bulle jouera un audio */
+    // Référence pour l'audio afin d'éviter les superpositions
+    const audioRef = useRef<HTMLAudioElement | null>(null)
+
+    // Nettoyage de l'audio quand on quitte la page
+    useEffect(() => {
+        return () => {
+            if (audioRef.current) {
+                audioRef.current.pause()
+                audioRef.current.currentTime = 0
+                audioRef.current = null
+            }
+        }
+    }, [])
+
+    /* Chaque bulle joue un audio avec sécurité anti-double clic */
     const handleBubbleClick = () => {
-        const audio = new Audio("/assets/QR1-Taches_v2.mp3")
-        audio.play().catch(err => console.error("Erreur lecture audio:", err))
+        // Si un audio est déjà en cours de lecture, on ignore le clic
+        if (audioRef.current && !audioRef.current.paused) {
+            return
+        }
+
+        // Sinon, on lance (ou relance) l'audio
+        if (!audioRef.current) {
+            audioRef.current = new Audio("/assets/QR1-Taches_v2.mp3")
+        }
+        audioRef.current.play().catch(err => console.error("Erreur lecture audio:", err))
     }
 
     const handleQuestionSubmit = async () => {
