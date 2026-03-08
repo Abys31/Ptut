@@ -62,12 +62,19 @@ export default function Home() {
               src="/assets/transition.mp4"
               autoPlay
               playsInline
+              disablePictureInPicture
+              controlsList="nodownload noplaybackrate"
               onEnded={() => navigate("/questions")}
               onError={(e) => {
                 console.error("Video error:", e);
                 navigate("/questions");
               }}
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }} // Cover pour éviter les bandes noires
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                pointerEvents: 'none' // Désactive les menus contextuels du navigateur au survol
+              }}
             />
           </div>
         </div>
