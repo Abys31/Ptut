@@ -49,9 +49,9 @@ export default function Home() {
           {/* Conteneur de la vidéo façon "Pop-up" sans bords noirs - PLUS GRAND */}
           <div style={{
             position: 'relative',
-            width: '88%', // Un peu plus petit pour mieux rentrer dans le cadre
-            maxWidth: '1200px', // Un peu plus petit pour mieux rentrer dans le cadre
-            backgroundColor: 'transparent', // Pas de fond noir
+            width: '94%', // Agrandi (88% -> 94%)
+            maxWidth: '1600px', // Agrandi (1200px -> 1600px)
+            backgroundColor: 'transparent',
             borderRadius: '24px',
             overflow: 'hidden',
             boxShadow: '0 0 60px rgba(0, 160, 255, 0.3), 0 20px 80px rgba(0, 0, 0, 0.6)',
